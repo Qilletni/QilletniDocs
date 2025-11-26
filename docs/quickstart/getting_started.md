@@ -37,12 +37,14 @@ There are two ways to use Qilletni. You may install it on your system, or use th
 For a system install, first install you have at least Java 22 installed. To install Qilletni, run the following in a bash shell:
 
 ```bash
-curl https://raw.githubusercontent.com/RubbaBoy/QilletniToolchain/refs/heads/master/scripts/install.sh | bash
+curl -L https://install.qilletni.dev/ | bash
 ```
+
+This will install the commands `qilletni` and `qpm`, which are the primary toolchain, and the Qilletni Package Manager (QPM) respectively.
 
 Then, open a new shell or run `source ~/.bashrc`
 
-From there, you can run `qilletni --help` for a list of commands.
+From there, you can run `qilletni --help` or `qpm --help` for a list of commands.
 
 #### Use with Docker
 
@@ -51,22 +53,22 @@ To use with Docker, run the following:
 ```bash
 docker run --rm \
   --network host \
-  -v qilletni-docker-run:/root \
-  -v "/$(pwd)":/data \
-  ghcr.io/rubbaboy/qilletni:latest \
-  --help
+  -v "/$(pwd)":/workspace \
+  -v qilletni-packages:/root/.qilletni/packages \
+  ghcr.io/qilletni/qilletni:latest \
+  qilletni --help
 ```
 
-Which is equivalent to running `qilletni --help`
+Which is equivalent to running `qilletni --help`. QPM is also accessible through this image.
 
 To run a file, it's recommended to `cd` into the parent directory of the file and run it from there. For example, to run `/e/qilletni/demo.ql` you would do, from the `/e/qilletni` directory,
 
 ```bash
 docker run --rm \
   --network host \
-  -v qilletni-docker-run:/root \
-  -v "/$(pwd)":/data \
-  ghcr.io/rubbaboy/qilletni:latest \
+  -v "/$(pwd)":/workspace \
+  -v qilletni-packages:/root/.qilletni/packages \
+  ghcr.io/qilletni/qilletni:latest \
   run demo.ql
 ```
 
@@ -79,7 +81,7 @@ Let’s create a simple "Hello, World!" program:
 1. **Initialize a project** Create a project directory, and then run the command
 
 ```bash
-qilletni init qilletni_demo/
+qilletni init --name qilletni_demo
 ```
 
 It will ask you for a project name, and the author's name. In this case, we'll give it the name `qilletni_demo`. It will also ask for an optional native binding class name, which may be left blank for now.
@@ -90,6 +92,7 @@ This will create a file tree of the following structure:
 qilletni_demo/
 └── qilletni-src/
     ├── qilletni_demo.ql
+    ├── qilletni.lock
     └── qilletni_info.yml
 ```
 
@@ -107,7 +110,7 @@ A more in-depth explanation of the project structure, and other project types, c
 qilletni run qilletni-src/qilletni_demo.ql
 ```
 
-   If everything is set up correctly, you should see:
+If everything is set up correctly, you should see:
 
 ```
 Hello, World!
@@ -117,3 +120,4 @@ Hello, World!
 
 Now that you have a Qilletni program running, it's time to link a music service. Check out the [Spotify](spotify_integration) or [Last.Fm](lastfm_integration) pages for more info. If you've done that, feel tree to check out the [Language Introduction](/language/introduction) or some of the [official packages](/packages/introduction).
 
+For making and using packages in Qilletni, navigate to [Package Management](/packages/package_managment).

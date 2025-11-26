@@ -58,7 +58,7 @@ nav:
       - Package Configs: package_configs.md
       - Hosting Docs: misc/hosting_docs.md
   - Packages:
-      - Introduction: packages/introduction.md
+      - Package Management: packages/package_management.md
       - Standard Library: packages/std.md
       - Spotify: packages/spotify.md
       - LastFm: packages/lastfm.md
