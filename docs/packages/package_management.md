@@ -26,7 +26,7 @@ This will scan dependencies in the `qilletni_info.yml`, create a lock file, and 
 
 To publish a `.qll`, you must first be logged in via `qpm login`, and follow the prompts, such as:
 
-```bash
+```txt
 $ qpm login
 Initiating GitHub authentication...
 
@@ -47,7 +47,7 @@ qpm publish somelib-1.0.0.qll
 
 The following is an example of creating, building and publishing a package. This creates a package named `publish-demo` with the scope of `RubbaBoy`.
 
-```bash
+```txt
 $ qilletni init --type library --name RubbaBoy/publish-demo
 Lock file not found, resolving dependencies...
 Resolving dependencies for RubbaBoy/publish-demo...
@@ -77,7 +77,7 @@ adam@adam-pc:/e/QilletniLibraries/publish-demo$
 
 Publishing packages through CI/CD is also possible with the Qilletni Docker image. See the example below for a working workflow file that publishes to QPM on every release tagged `vX.Y.Z`.
 
-```yml title="publish_qpm.yml"
+```yaml title="publish_qpm.yml"
 on:
   push:
     tags:
