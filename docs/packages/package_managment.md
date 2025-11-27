@@ -72,3 +72,33 @@ Size: 643 B
 Integrity: sha256-tUSJ1H4ixx9sVht+3WQHCMqv57tJrt4X+ubyM92WqS0=
 adam@adam-pc:/e/QilletniLibraries/publish-demo$ 
 ```
+
+## Publishing With GitHub Actions
+
+Publishing packages through CI/CD is also possible with the Qilletni Docker image. See the example below for a working workflow file that publishes to QPM on every release tagged `vX.Y.Z`.
+
+```yml title="publish_qpm.yml"
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/qilletni/qilletni:snapshot
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build Package
+        run: qilletni build
+
+      - name: QPM Publish
+        run: qpm publish
+        env:
+          QPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Note that the `qilletni build` is shorthand for `qilletni build .`, which builds the package that is in the current directory (the repository's root), and `qpm publish` finds the latest `.qll` file in the current project's build directory.
