@@ -57,3 +57,18 @@ provider "library name" {
 ```
 
 The name of the provider is the library's name.
+
+## The Native Feature Set
+
+Service providers have varying levels of implementation, depending on both maturity and APIs available from the service.
+
+Qilletni specifies a specific "native" feature set that is expected for service providers to support. This feature set is generic enough where most service providers should be able to support them, including:
+
+- Song lookup
+- Artist lookup
+- User lookup
+- Collection lookup
+- `play` functionality
+- Music type conversion between service providers
+
+On top of these, service providers may have additional features through the normal package interface. This may include things like playlist modification, recommendations, etc.

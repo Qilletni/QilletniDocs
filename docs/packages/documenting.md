@@ -4,7 +4,11 @@ Qilletni features a custom documentation generator tailored to the languages' ne
 
 ## The Documentation Generator
 
-The documentation generator is accessed from the `qilletni doc` command. The generator creates a full static website from either a project's source, or from an existing Qilletni Library (`.qll`) file.
+The documentation generator is accessed from the `qilletni doc` command. The generator creates a full static website from either a project's source, or from an existing Qilletni Library (`.qll`) file. This static website may host multiple packages' documentation, with an index page updated automatically.
+
+!!! info
+    
+    The generator currently only supports single package scopes across a single deployment directory.
 
 ### Using The Generator
 
@@ -36,6 +40,22 @@ The Qilletni documentation generator is unique in the fact it allows for cross-r
 For instance, take a package A and B. B defined an entity, which its own generated page, showing functions. If A defines a function that extends that entity, then the function will be documented both in A, and the type defined in B. This leaves out any guesswork of what's available on an entity when using multiple libraries at once.
 
 This is implemented by storing information about each docstring in a cache file, named `<package-name>.cache` in `~/.qilletni/cache` (or wherever else specified). When generating documentation for a package, if it has an extension function on another package's entity, it will look for that package in the cache and update it to include the function. Then, the documentation is regenerated for that package as well.
+
+### Generated Documentation Features
+
+Aside from cross-package referencing, the documentation generator supports some more advanced features:
+
+#### Searching
+
+When documentation is generated, an index is generated which allows for fast searching through a packages' documentation. This search is scoped on a per-package basis.
+
+![Image title](/images/search.png){ loading=lazy width="500" }
+
+#### File Tree Navigation
+
+For each package documented, the full tree of files is displayed, allowing for easy navigation and understanding of a whole package's structure. Files can be individually inspected, showing what is defined in it. Likewise, each entity, function, and field are linked to the file of its definition.
+
+![Image title](/images/file_tree.png){ loading=lazy width="300" }
 
 ## Writing Documentation
 

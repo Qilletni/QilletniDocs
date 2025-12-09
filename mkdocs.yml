@@ -62,9 +62,10 @@ nav:
       - Hosting Docs: misc/hosting_docs.md
   - Official Packages:
       - Official Packages: packages/official_packages.md
+      - Service Providers:
+        - Spotify: packages/service_providers/spotify.md
+        - Tidal: packages/service_providers/tidal.md
       - Standard Library: packages/std.md
-      - Spotify: packages/spotify.md
-      - Tidal: packages/tidal.md
       - LastFm: packages/lastfm.md
       - JSON: packages/json.md
       - Metadata: packages/metadata.md
@@ -76,6 +77,8 @@ nav:
 markdown_extensions:
   - attr_list
   - toc
+  - md_in_html
+  - pymdownx.blocks.caption
 #      permalink: true
   - tables
   - admonition
