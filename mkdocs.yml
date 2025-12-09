@@ -49,18 +49,22 @@ nav:
         - Documenting Code: language/documenting_code.md
         - Debugging: language/debugging.md
     - Native Binding:
-        - Introduction: native_binding/introduction.md
-        - Native Functions: native_binding/native_functions.md
-        - Native Bind Factories: native_binding/native_bind_factories.md
-        - Background Tasks: native_binding/background_tasks.md
-        - Usage Examples: native_binding/usage_examples.md
+      - Introduction: native_binding/introduction.md
+      - Native Functions: native_binding/native_functions.md
+      - Native Bind Factories: native_binding/native_bind_factories.md
+      - Background Tasks: native_binding/background_tasks.md
+      - Usage Examples: native_binding/usage_examples.md
+    - Packages:
+      - Package Management: packages/package_management.md
+      - Documenting: packages/documenting.md
     - Misc:
       - Package Configs: package_configs.md
       - Hosting Docs: misc/hosting_docs.md
-  - Packages:
-      - Package Management: packages/package_management.md
+  - Official Packages:
+      - Official Packages: packages/official_packages.md
       - Standard Library: packages/std.md
       - Spotify: packages/spotify.md
+      - Tidal: packages/tidal.md
       - LastFm: packages/lastfm.md
       - JSON: packages/json.md
       - Metadata: packages/metadata.md

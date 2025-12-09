@@ -16,7 +16,7 @@ A lock file, `qilletni.lock`, is created in the project when a project is instal
 
 ## Usage
 
-To install packages in a fresh project, first enter the project' root (or the `qilletni_src`) directory. Then, run
+To install packages in a fresh project, first enter the project's root (or the `qilletni_src`) directory. Then, run
 
 ```bash
 qpm install
