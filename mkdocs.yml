@@ -20,6 +20,7 @@ theme:
     - navigation.path
     - content.code.copy
     - content.code.annotate
+    - content.tooltips
 
 extra_javascript:
   - js/playlist_visual.js
