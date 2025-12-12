@@ -1,3 +1,55 @@
 .table-icon {
     font-size: 1.5em;
 }
+
+/* Package info sidebar - only show in right sidebar */
+.md-sidebar--primary .package-info {
+    display: none;
+}
+
+.package-info {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.2rem;
+    font-size: 0.7rem;
+}
+
+.package-info__name {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--md-default-fg-color);
+    font-family: var(--md-code-font-family);
+}
+
+.package-info__version {
+    color: var(--md-default-fg-color--light);
+    margin-top: 0.25rem;
+}
+
+.package-info__author {
+    color: var(--md-default-fg-color--light);
+    margin-top: 0.25rem;
+}
+
+.package-info__links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.package-info__links a {
+    color: var(--md-default-fg-color--light);
+    display: flex;
+    align-items: center;
+}
+
+.package-info__links a:hover {
+    color: var(--md-accent-fg-color);
+}
+
+.package-info__links svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+}

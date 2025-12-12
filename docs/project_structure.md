@@ -81,7 +81,7 @@ Which defines a simple method an application importing it may use.
 
 ### Project With Native Bindings
 
-A project with native bindings is a project that has Java code bound to Qilletni [native methods](language_basics/native_functions.md). To create a project with native bindings, use the `--native-class` option in the `qilletni init` command:
+A project with native bindings is a project that has Java code bound to Qilletni [native methods](native_binding/native_functions.md). To create a project with native bindings, use the `--native-class` option in the `qilletni init` command:
 
 ```bash
 qilletni init --native-class com.example.qilletni.ProjectName <project_name>
@@ -134,8 +134,8 @@ The available properties are:
 | author              | yes      | string                 | The author's name                                            |
 | description         | no       | string                 | A description of the library                                 |
 | dependencies        | no       | package list           | A list of packages the library or application depends on     |
-| provider            | no       | Java class string      | The Java class that implements the `ServiceProvider` interface, if the library includes a [service provider](language_reference/service_providers.md) |
-| native_bind_factory | no       | Java class string      | The Java class that implements `NativeFunctionBindingFactory` to provide native methods' implementations with singleton instances of objects. See [Native Binding Factories](native_binding/native_binding_factories.md) |
+| provider            | no       | Java class string      | The Java class that implements the `ServiceProvider` interface, if the library includes a [service provider](language/service_providers.md) |
+| native_bind_factory | no       | Java class string      | The Java class that implements `NativeFunctionBindingFactory` to provide native methods' implementations with singleton instances of objects. See [Native Binding Factories](native_binding/native_bind_factories.md) |
 | native_classes      | no       | Java class string list | A list of Java classes that bind to Qilletni native methods. See [Native Methods](native_binding/native_functions.md) |
 | auto_import         | no       | source file list       | A list of Qilletni source file paths that are included in all files without an explicit `import`. **Note: This should only be used in rare cases** |
 

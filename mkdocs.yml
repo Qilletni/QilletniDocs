@@ -7,6 +7,7 @@ repo_url: "https://github.com/RubbaBoy/Qilletni"
 
 theme:
   name: 'material'
+  custom_dir: overrides
   highlightjs: true
   features:
     - navigation.tracking
@@ -33,6 +34,7 @@ nav:
     - Quickstart:
         - Getting Started: quickstart/getting_started.md
         - Spotify Integration: quickstart/spotify_integration.md
+        - Tidal Integration: quickstart/tidal_integration.md
         - Last.Fm Integration: quickstart/lastfm_integration.md
     - Project Structure: project_structure.md
     - Language:
@@ -61,10 +63,10 @@ nav:
       - Package Configs: package_configs.md
       - Hosting Docs: misc/hosting_docs.md
   - Official Packages:
-      - Official Packages: packages/official_packages.md
+      - Official Packages: official_packages/official_packages.md
       - Service Providers:
-        - Spotify: packages/service_providers/spotify.md
-        - Tidal: packages/service_providers/tidal.md
+        - Spotify: official_packages/service_providers/spotify.md
+        - Tidal: official_packages/service_providers/tidal.md
       - Standard Library: packages/std.md
       - LastFm: packages/lastfm.md
       - JSON: packages/json.md

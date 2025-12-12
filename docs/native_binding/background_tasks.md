@@ -25,3 +25,5 @@ backgroundTaskExecutor.triggerCondition(conditionId, "My Song");
 ```
 
 In this instance, the Consumer accepted a string. This could be any object, which allows cross-thread parameters. Note that you must do any Qilletni type conversion in the callback.
+
+In Qilletni, a program may complete while a background task is running. To circumvent this, the [`processBackground()`](https://docs.qilletni.dev/library/std/#native+fun+processBackground%28%29) function may be invoked, which stops the program indefinitely, letting background tasks complete. 
