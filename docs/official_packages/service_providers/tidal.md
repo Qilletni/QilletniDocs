@@ -8,7 +8,7 @@ package_docs: https://docs.qilletni.dev/libraries/tidal
 
 # Tidal
 
-The Tidal package is a service provider implementing the full native feature set with, with additional capabilities such as playlist management planned soon. Due to API limitations, the `play` is unable to add to the user's queue.
+The Tidal package is a service provider implementing the full [native feature set](/language/service_providers/#the-native-feature-set) with additional capabilities such as playlist management planned soon. Due to API limitations, the `play` is unable to add to the user's queue.
 
 ## Features
 

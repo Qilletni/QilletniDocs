@@ -118,6 +118,6 @@ Hello, World!
 
 ## Next Steps
 
-Now that you have a Qilletni program running, it's time to link a music service. Check out the [Spotify](spotify_integration) or [Last.Fm](lastfm_integration) pages for more info. If you've done that, feel tree to check out the [Language Introduction](/language/introduction) or some of the [official packages](/packages/introduction).
+Now that you have a Qilletni program running, it's time to link a music service. Check out the [Spotify](spotify_integration) or [Last.fm](lastfm_integration) pages for more info. If you've done that, feel tree to check out the [Language Introduction](/language/introduction) or some of the [official packages](/packages/introduction).
 
 For making and using packages in Qilletni, navigate to [Package Management](/packages/package_managment).

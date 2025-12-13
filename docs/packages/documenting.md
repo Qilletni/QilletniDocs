@@ -80,7 +80,7 @@ Below is a description, with examples, of each directive. Some directives may be
 A directive that may be used directly on a variable declaration, inline in any description, or applied to `@param`, `@returns` and `@on`. `@java` may be added before the type name to indicate the type is a fully qualified Java class name.
 
 The following is an example of using `@type` on a variable declaration:
-```ql
+```qilletni
 /**
  * A map of data
  * @type @java java.util.HashMap
@@ -142,7 +142,7 @@ Specifies the return type of a function. Similar to `@param`, a type may be spef
 
 Allows an extension method to describe its target type. This also accepts a type. There is no need to specify a `@type` directive unless documenting a Java type.
 
-```ql
+```qilletni
 /**
  * Prints out the given string
  *

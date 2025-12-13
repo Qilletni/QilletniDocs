@@ -3,7 +3,7 @@
 site_name: "Qilletni Language Docs"
 site_description: "Documentation, code examples, and library help for Qilletni"
 site_url: "https://qilletni.dev/"
-repo_url: "https://github.com/RubbaBoy/Qilletni"
+repo_url: "https://github.com/Qilletni/Qilletni"
 
 theme:
   name: 'material'
@@ -36,7 +36,7 @@ nav:
         - Getting Started: quickstart/getting_started.md
         - Spotify Integration: quickstart/spotify_integration.md
         - Tidal Integration: quickstart/tidal_integration.md
-        - Last.Fm Integration: quickstart/lastfm_integration.md
+        - Last.fm Integration: quickstart/lastfm_integration.md
     - Project Structure: project_structure.md
     - Language:
         - Introduction: language/introduction.md
@@ -68,6 +68,7 @@ nav:
       - Service Providers:
         - Spotify: official_packages/service_providers/spotify.md
         - Tidal: official_packages/service_providers/tidal.md
+        - Last.fm: official_packages/service_providers/lastfm.md
       - Standard Library: packages/std.md
       - LastFm: packages/lastfm.md
       - JSON: packages/json.md

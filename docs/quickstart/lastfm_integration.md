@@ -1,10 +1,10 @@
-# Last.Fm Integration
+# Last.fm Integration
 
-Last.Fm integration is provided via the [lastfm](https://docs.qilletni.dev/library/lastfm/) package, which is a [Service Provider](/language/service_providers). Because it is a standalone package, it must be connected to Last.Fm.
+Last.fm integration is provided via the [lastfm](https://docs.qilletni.dev/library/lastfm/) package, which is a [Service Provider](/language/service_providers). Because it is a standalone package, it must be connected to Last.fm.
 
 ## API Setup
 
-Because using Qilletni is essentially using an API and not an end application, you must create Last.Fm API keys for your account.
+Because using Qilletni is essentially using an API and not an end application, you must create Last.fm API keys for your account.
 
 To create an API, sign into [https://www.last.fm/api/account/create](https://www.last.fm/api/account/create) and fill out the information, and click **Submit**. The Callback URL is not required.
 
@@ -18,7 +18,7 @@ Where `api-key` is your API Key, such as `f8ea7243239ec13d1ab6b858532c5b32`, and
 
 ## Database Setup
 
-The Last.Fm package also needs database access for caching music data. If using the default Docker Postgres settings from [Getting Started](getting_started.md), the following settings are populated by default and do not need manual setting:
+The Last.fm package also needs database access for caching music data. If using the default Docker Postgres settings from [Getting Started](getting_started.md), the following settings are populated by default and do not need manual setting:
 
 ```
 | Property     | Value                                             |
@@ -65,5 +65,5 @@ Recent Tracks:
         [song("Euclid" by "Sleep Token"), song("Take Me Back to Eden" by "Sleep Token"), ...]
 ```
 
-For more usage of the Last.Fm package, see the [Last.Fm Package Page](/packages/lastfm).
+For more usage of the Last.fm package, see the [Last.fm Package Page](/packages/lastfm).
 

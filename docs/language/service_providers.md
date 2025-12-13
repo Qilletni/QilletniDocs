@@ -1,13 +1,13 @@
 # Service Providers
 
-Music is handled through a service provider, which is a Qilletni package with additional features. This is often an implementation of an API, such as Spotify, that handles necessary caching and lookups, abstracted by Qilletni's API. This allows for drop-in replacements of what music service is being used. The following is an example of getting a song from the Last.Fm provider. The Last.Fm provider also provides access to API methods to get specific data on the user.
+Music is handled through a service provider, which is a Qilletni package with additional features. This is often an implementation of an API, such as Spotify, that handles necessary caching and lookups, abstracted by Qilletni's API. This allows for drop-in replacements of what music service is being used. The following is an example of getting a song from the Last.fm provider. The Last.fm provider also provides access to API methods to get specific data on the user.
 
 ```qilletni
 import "lastfm:lastfm.ql"
 
 provider "lastfm" // (1)!
 
-print("\tProvider is Last.FM")
+print("\tProvider is Last.fm")
 
 Page page = new Page()
                 ..page = 1
@@ -24,15 +24,15 @@ provider "spotify" { // (3)!
 }
 ```
 
-1. A `provider` statement without brackets switches the whole program to use the provider, in this case, Last.Fm
-2. Gets a Last.Fm song
+1. A `provider` statement without brackets switches the whole program to use the provider, in this case, Last.fm
+2. Gets a Last.fm song
 3. Everything in this block is now in the Spotify provider, so anything accessed will automatically convert to this service provider
 4. Prints the Spotify ID of the song
 
-This results in the following output, which prints out the user's top song from Last.Fm, and then its Spotify ID:
+This results in the following output, which prints out the user's top song from Last.fm, and then its Spotify ID:
 
 ```
-        Provider is Last.FM
+        Provider is Last.fm
 song("Late Night Drinking" by "nowifi")
         Provider is Spotify
 4Xl2xUFmj2xbszjYjEXxkx

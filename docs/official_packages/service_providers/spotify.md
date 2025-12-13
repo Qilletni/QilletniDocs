@@ -8,7 +8,7 @@ package_docs: https://docs.qilletni.dev/libraries/spotify
 
 # Spotify
 
-The Spotify package is a service provider implementing the full native feature set, with additional capabilities including playlist management, playing, and Spotify's recommendation API. In this page, the **user** refers to the Spotify account that is logged into Qilletni.
+The Spotify package is a service provider implementing the full [native feature set](/language/service_providers/#the-native-feature-set) with additional capabilities including playlist management, playing, and Spotify's recommendation API. In this page, the **user** refers to the Spotify account that is logged into Qilletni.
 
 ## Features
 

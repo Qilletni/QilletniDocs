@@ -18,9 +18,9 @@ printf("Tags for song: %s", [metadata.getTags(mySong).join(", ")])  // Prints "T
 
 ```
 
-## Last.Fm to Spotify Conversion
+## Last.fm to Spotify Conversion
 
-As Qilletni supports automatic and efficient conversion between music providers, collections from one to another is seamless. The following takes a list of Last.Fm songs and adds them to a newly created Spotify playlist.
+As Qilletni supports automatic and efficient conversion between music providers, collections from one to another is seamless. The following takes a list of Last.fm songs and adds them to a newly created Spotify playlist.
 
 ```qilletni
 import "lastfm:lastfm.ql"
@@ -51,8 +51,8 @@ addToPlaylist(newPlaylist, result.data)
 print("Created a playlist with %s songs".format([result.data.size()]))
 ```
 
-1. Ensures the music provider is Last.Fm
-2. Makes an API request to Last.Fm to get the top 100 songs played in the last 3 months
+1. Ensures the music provider is Last.fm
+2. Makes an API request to Last.fm to get the top 100 songs played in the last 3 months
 3. Methods that are API calls are handled a little more manually, so they should gracefully terminate if unsuccessful
 4. Create a new Spotify playlist and add the songs
 5. Switch the music provider to Spotify so conversion happens when needed
