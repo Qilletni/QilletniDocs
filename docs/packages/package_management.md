@@ -73,6 +73,16 @@ Integrity: sha256-tUSJ1H4ixx9sVht+3WQHCMqv57tJrt4X+ubyM92WqS0=
 adam@adam-pc:/e/QilletniLibraries/publish-demo$ 
 ```
 
+## Local Publishing
+
+Packages can also be published locally, without a server. Currently, dependencies will only be resolved to a local dependency if the package name matches exactly.
+
+To publish a local package, use `qpm publish-local` in the same way as `qpm publish`.
+
+!!! info
+
+	Local publishing is a new, and not thoroughly tested feature. If you encounter any issues, please make an issue [here](https://github.com/Qilletni/QPMCLI/issues/new).
+
 ## Publishing With GitHub Actions
 
 Publishing packages through CI/CD is also possible with the Qilletni Docker image. See the example below for a working workflow file that publishes to QPM on every release tagged `vX.Y.Z`.
