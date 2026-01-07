@@ -49,7 +49,7 @@ $ qilletni persist internal eagerMusicLoad
 
 ## Using In Native Libraries
 
-In a native library, from Java, package configs can be used via a [native injected class](/native_binding/native_bind_factories/#predefined-injectable-classes), injecting the [PackageConfig](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/persistence/PackageConfig.html) class, as shown below.
+In a native library, from Java, package configs can be used via a [native injected class](/native_binding/native_bind_factories/#predefined-injectable-classes), injecting the [PackageConfig](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/persistence/PackageConfig.html) class, as shown below.
 
 ```java
 public class MyLibraryFunctions {
@@ -61,7 +61,7 @@ public class MyLibraryFunctions {
 }
 ```
 
-To use this, the package config may be accessed via [get(String)](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/persistence/PackageConfig.html#get(java.lang.String)) and [set(String, String)](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/persistence/PackageConfig.html#set(java.lang.String,java.lang.String)). More methods are outlined in the [javadocs](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/persistence/PackageConfig.html). To save the config, you must use the [saveConfig()](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/persistence/PackageConfig.html#saveConfig()) method.
+To use this, the package config may be accessed via [get(String)](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/persistence/PackageConfig.html#get(java.lang.String)) and [set(String, String)](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/persistence/PackageConfig.html#set(java.lang.String,java.lang.String)). More methods are outlined in the [javadocs](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/persistence/PackageConfig.html). To save the config, you must use the [saveConfig()](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/persistence/PackageConfig.html#saveConfig()) method.
 
 ## Using In Qilletni Code
 

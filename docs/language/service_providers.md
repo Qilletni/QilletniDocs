@@ -1,6 +1,10 @@
 # Service Providers
 
-Music is handled through a service provider, which is a Qilletni package with additional features. This is often an implementation of an API, such as Spotify, that handles necessary caching and lookups, abstracted by Qilletni's API. This allows for drop-in replacements of what music service is being used. The following is an example of getting a song from the Last.fm provider. The Last.fm provider also provides access to API methods to get specific data on the user.
+Music is handled through a service provider, which is a Qilletni package with additional features. This is often an implementation of an API, such as Spotify, that handles necessary caching and lookups, abstracted by Qilletni's API. This allows for drop-in replacements of what music service is being used.
+
+When using a service provider, API tokens must be provided. This is because just as with a language using an API's wrapper, Qilletni is using an API directly, unlike a client-facing application. When using a service provider, ensure to adhere to the terms of the service provider's API.
+
+The following is an example of getting a song from the Last.fm provider. The Last.fm provider also provides access to API methods to get specific data on the user.
 
 ```qilletni
 import "lastfm:lastfm.ql"

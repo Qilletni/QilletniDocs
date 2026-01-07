@@ -3,7 +3,7 @@ package_name: qilletni/spotify
 package_version: 1.0.0-SNAPSHOT
 package_author: Adam Yarris
 package_github: https://github.com/Qilletni/Qilletni/tree/master/qilletni-spotify
-package_docs: https://docs.qilletni.dev/libraries/spotify
+package_docs: https://docs.qilletni.dev/library/spotify
 ---
 
 # Spotify

@@ -3,15 +3,12 @@ package_name: qilletni/lastfm
 package_version: 1.0.0-SNAPSHOT
 package_author: Adam Yarris
 package_github: https://github.com/Qilletni/QilletniLastFm
-package_docs: https://docs.qilletni.dev/libraries/lastfm
+package_docs: https://docs.qilletni.dev/library/lastfm
 ---
 
 # Last.fm
 
 The Last.fm package is a limited service provider that does **not** implement the [native feature set](/language/service_providers/#the-native-feature-set). Due to the nature of Last.fm, some concepts don't cleanly carry over to Qilletni, such as user playlists.
-
-
-## Features
 
 The following features are implemented as part of the native feature set:
 

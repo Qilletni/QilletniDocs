@@ -3,7 +3,7 @@ package_name: qilletni/tidal
 package_version: 1.0.0-SNAPSHOT
 package_author: Adam Yarris
 package_github: https://github.com/Qilletni/QilletniTidal
-package_docs: https://docs.qilletni.dev/libraries/tidal
+package_docs: https://docs.qilletni.dev/library/tidal
 ---
 
 # Tidal

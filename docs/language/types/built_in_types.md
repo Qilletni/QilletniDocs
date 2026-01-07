@@ -44,7 +44,7 @@ Strings are immutable sequences of characters. They may be formatted via
 //   Number: 123  Float (3 decimal places): 3.142  String: hello
 ```
 
-The `format` method takes in an array of expressions to format with the string. For simplicity, formatting follows Java's implementation, outlined [here](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html).
+The `format` method takes in an array of expressions to format with the string. For simplicity, formatting follows Java's implementation, outlined [here](https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Formatter.html).
 
 The same can be done with `printf`:
 

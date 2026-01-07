@@ -75,7 +75,7 @@ It is recommended to use automatic type conversion, but is not necessary. For a 
 
 ## Qilletni Type Structure
 
-Native types in Qilletni are all subtypes of [QilletniType](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/QilletniType.html). A method may both return or take in any QilletniType.
+Native types in Qilletni are all subtypes of [QilletniType](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/QilletniType.html). A method may both return or take in any QilletniType.
 
 ## Automatic Type Conversion
 
@@ -100,7 +100,7 @@ To assist with dealing with built-in Qilletni types, Qilletni will automatically
 
 ### Skipping Automatic Type Conversion
 
-If a type is returned and you don't want it to automatically convert, such as returning a JavaType of HashMap without converting it to the Map entity, the [@SkipReturnTypeAdapter](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/annotations/SkipReturnTypeAdapter.html) annotation may be used on the method. The following is an example that is used in the Map entity itself, to initialize a Java type of HashMap.
+If a type is returned and you don't want it to automatically convert, such as returning a JavaType of HashMap without converting it to the Map entity, the [@SkipReturnTypeAdapter](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/annotations/SkipReturnTypeAdapter.html) annotation may be used on the method. The following is an example that is used in the Map entity itself, to initialize a Java type of HashMap.
 
 ```java title="MapFunctions.java"
 @SkipReturnTypeAdapter
@@ -113,7 +113,7 @@ public static Object _emptyJavaMap() {
 
 Entities are a little more complicated to handle in native methods, as they are inherently more complex than the predefined types. Luckily, Qilletni has the full ability to manipulate them and make your own.
 
-When an entity instance is passed into a native method, it is passed in as an [EntityType](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/EntityType.html). To access the fields or functions in the entity, [getEntityScope()](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/EntityType.html#getEntityScope()) can be used, as shown below.
+When an entity instance is passed into a native method, it is passed in as an [EntityType](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html). To access the fields or functions in the entity, [getEntityScope()](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html#getEntityScope()) can be used, as shown below.
 
 ```qilletni title="cats.ql"
 entity Cat {
@@ -143,7 +143,8 @@ public class CatFunctions {
 }
 ```
 
-The first [getValue()](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/table/Symbol.html#getValue()) call returns the value of the [Symbol](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/table/Symbol.html), which is an internal representation of a variable that may hold any Qilletni type. From there, the value from each is gotten which is the actual type instance. Note that IntTypes are internally represented as `long`s.
+The first [lookup()](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/table/Scope.html#lookup(java.lang.String)) call returns the [Symbol](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/table/Symbol.html), which is an internal representation of a variable that may hold any Qilletni type.
+From there, the value from each is gotten which is the actual type instance. Note that [IntType](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/IntType.html)s are internally represented as `long`s.
 
 If a variable is changed, the Symbol does not need to be re-set, but it can be. An example of a variable being updated is:
 
@@ -165,7 +166,8 @@ public void catBirthday(EntityType catEntity) {
 
 ### Entity/Record Conversion
 
-Entities may also be automatically converted to and from Java records, using the [TypeConverter](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/conversion/TypeConverter.html) class. The instance of this class is acquired through automatic injection, see [Native Bind Factories](/native_binding/native_bind_factories/) for more information, and the other classes available to use. Below is an example of taking in an entity and automatically converting it to a record.
+Entities may also be automatically converted to and from Java records, using the [TypeConverter](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/conversion/TypeConverter.html) class.
+The instance of this class is acquired through automatic injection, see [Native Bind Factories](/native_binding/native_bind_factories/) for more information, and the other classes available to use. Below is an example of taking in an entity and automatically converting it to a record.
 
 ```qilletni title="cats.ql"
 entity Cat {
@@ -198,9 +200,9 @@ public class CatFunctions {
 }
 ```
 
-The above code uses the [convertFromEntityToRecord](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/conversion/TypeConverter.html#convertFromEntityToRecord(dev.qilletni.api.lang.types.EntityType,java.lang.Class)) method to take an EntityType, and map its properties to a Java record that has fields of the same name.
+The above code uses the [convertFromEntityToRecord](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/conversion/TypeConverter.html#convertFromEntityToRecord(dev.qilletni.api.lang.types.EntityType,java.lang.Class)) method to take an EntityType, and map its properties to a Java record that has fields of the same name.
 
-Similarly, the [convertFromRecordToEntity](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/conversion/TypeConverter.html#convertFromRecordToEntity(java.lang.String,java.lang.Object)) method does the opposite, taking a Record and mapping it to an EntityType, matching its values up with the constructor of the entity, as shown below. This assumes the Cat entity is still defined.
+Similarly, the [convertFromRecordToEntity](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/conversion/TypeConverter.html#convertFromRecordToEntity(java.lang.String,java.lang.Object)) method does the opposite, taking a Record and mapping it to an EntityType, matching its values up with the constructor of the entity, as shown below. This assumes the Cat entity is still defined.
 
 ```qilletni title="cats.ql"
 native fun createNewCat(name, age)
@@ -233,27 +235,34 @@ entity Cat {
 }
 ```
 
-Implementing this function in Java uses the [@NativeOn](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/annotations/NativeOn.html) annotation on the method. This takes in the entity name this is on (`on` in a similar context to an extension method's syntax).
+Implementing this function in Java uses the [@NativeOn](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/annotations/NativeOn.html) annotation on the method. This takes in the entity name this is on (`on` in a similar context to an extension method's syntax).
+Any native method on an Entity must accept an [EntityType](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html) as its first parameter (note this is not reflected in the Qilletni signature). This is the instance of the entity that the method is being invoked on.
 
 ```java title="CatFunctions.java"
 @NativeOn("Cat")
-public void pet() {
+public void pet(EntityType catEntity) {
     StringType name = catEntity.getEntityScope().<StringType>lookup("name").getValue();
     System.out.println("Petting %s!".formatted(name.getValue()));
 }
 ```
 
-Often times a whole Java class is dedicated for native methods on an entity. The @NativeOn annotation may also be applied to a class definition, making all methods that line up with signatures native methods, as shown below.
+Often times a whole Java class is dedicated for native methods on an entity. The [@NativeOn](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/annotations/NativeOn.html) annotation may also be applied to a class definition, making all methods that line up with signatures native methods, as shown below.
+As with the case of normal native methods, the first parameter is the entity instance.
 
-``` java title="CatFunctions.java"
+```java title="CatFunctions.java"
 @NativeOn("Cat")
 public class CatFunctions {
-    public void pet() {
+    public void pet(EntityType catEntity) {
         StringType name = catEntity.getEntityScope().<StringType>lookup("name").getValue();
         System.out.println("Petting %s!".formatted(name.getValue()));
     }
 }
 ```
+
+### Native Static Entity Functions
+
+Static methods on entities may also have native definitions. These are the same as a normal native method on an entity, but instead of accepting an [EntityType](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html), it accepts a [StaticEntityType](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/StaticEntityType.html).
+This provides the method with context regarding the [entity definition](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/entity/EntityDefinition.html), and the static scope of the entity.
 
 ## Injectable Types
 
@@ -283,4 +292,4 @@ public class SongFunctions {
 }
 ```
 
-1. If the `@BeforeAnyInvocation` method wasn't ran and the song hadn't been loaded yet, [getTrack()](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lang/types/SongType.html#getTrack()) would be null.
+1. If the `@BeforeAnyInvocation` method wasn't ran and the song hadn't been loaded yet, [getTrack()](https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/SongType.html#getTrack()) would be null.

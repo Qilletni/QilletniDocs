@@ -2,7 +2,7 @@
 
 ## Adding Metadata Tags
 
-The following uses the [metadata](https://qilletni-docs.yarr.is/library/metadata/) library. This attaches data to songs, albums and artists to help filter or organize music. This uses an internal database, so metadata persists.
+The following uses the [metadata](https://docs.qilletni.dev/library/metadata/) library. This attaches data to songs, albums and artists to help filter or organize music. This uses an internal database, so metadata persists.
 
 ```qilletni
 import "metadata:metadata.ql"
@@ -59,7 +59,7 @@ print("Created a playlist with %s songs".format([result.data.size()]))
 
 ## Spotify Recommendation API
 
-The Spotify library's [Recommender](https://qilletni-docs.yarr.is/library/spotify/entity/Recommender) entity, the full Spotify recommendation system can be utilized to fine tune music selections.
+The Spotify library's [Recommender](https://docs.qilletni.dev/library/spotify/entity/Recommender) entity, the full Spotify recommendation system can be utilized to fine tune music selections.
 
 ```qilletni
 import "spotify:recommendations.ql"

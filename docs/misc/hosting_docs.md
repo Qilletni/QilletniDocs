@@ -51,7 +51,7 @@ Allow root access on the script.
 sudo bash -c 'echo "github-deploy ALL=(root) NOPASSWD: /opt/qilletni/run_docs_wrapper.sh" >> /etc/sudoers.d/github-deploy'
 ```
 
-Now the `github-deploy` user can only run the script that generates the docs. To get these scripts, copy the [QilletniToolchain/deploy](https://github.com/RubbaBoy/QilletniToolchain/tree/master/deploy) directory contents to the server's `/opt/qilletni` directory, and run
+Now the `github-deploy` user can only run the script that generates the docs. To get these scripts, copy the [QilletniToolchain/deploy](https://github.com/Qilletni/QilletniToolchain/tree/master/deploy) directory contents to the server's `/opt/qilletni` directory, and run
 
 ```bash
 sudo chmod 2775 /opt/qilletni/
