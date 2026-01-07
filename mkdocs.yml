@@ -70,9 +70,11 @@ nav:
       - Usage Examples: native_binding/usage_examples.md
     - Packages:
       - Package Management: packages/package_management.md
+      - Package Development: packages/package_development.md
       - Documenting: packages/documenting.md
     - Misc:
-      - Package Configs: package_configs.md
+      - Package Configs: misc/package_configs.md
+      - IDE Integration: misc/ide_integration.md
       - Hosting Docs: misc/hosting_docs.md
   - Official Packages:
       - Official Packages: official_packages/official_packages.md

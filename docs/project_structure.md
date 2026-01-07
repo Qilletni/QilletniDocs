@@ -67,7 +67,8 @@ import "project_name:project_name.ql"
 sayHello()
 ```
 
-This file is not actually part of the project, so it is not included in the `qilletni-src/` directory. Examples of a library are conventionally stored in this directory, or its subdirectories
+This file is not actually part of the project, so it is not included in the `qilletni-src/` directory. Examples of a library are conventionally stored in this directory, or its subdirectories.
+To run examples in this directory, see [package development](/packages/package_development).
 
 The example source file for this will contain:
 

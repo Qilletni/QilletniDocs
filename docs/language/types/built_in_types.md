@@ -204,7 +204,7 @@ Qilletni's whole purpose is dealing with music, so certain functions are baked i
 
 All music data is handled by the currently active [Service Provider](/service_providers.md). A service provider assumes there is an ID present for each song, album, collection, and artist. The individual service provider has the ability to parse URLs to extract the relevant ID present. For examples, assume whenever you see an ID, a URL may also be passed in.
 
-If the internal [package config](/package_configs.md) property `eagerLoad` is `true`, the music type will be immediately queried, and will error out if invalid. If the property is not found or `false`, it will be queried whenever the first method that references a property of the type is invoked. See the following example where `eagerLoad` is `false`:
+If the internal [package config](/misc/package_configs.md) property `eagerLoad` is `true`, the music type will be immediately queried, and will error out if invalid. If the property is not found or `false`, it will be queried whenever the first method that references a property of the type is invoked. See the following example where `eagerLoad` is `false`:
 
 ```qilletni
 song mySong = "Haunted" by "Burdened Hearts"  // Song is not loaded yet, no API calls have been made
@@ -284,10 +284,14 @@ In Qilletni, a playlist is abstracted as a `collection`. A collection is what it
 collection c1 = "rage death kill" collection by "rubbaboy"
 collection c2 = "2fupEjJ1lamW0dfAsXJag6"
 collection c3 = "https://open.spotify.com/playlist/2fupEjJ1lamW0dfAsXJag6?si=45dd2429fd0a46ba"
-collection c4 = collection(["Empath" by "Fayne", "Full Tilt" by "Johnny Booth", "7L7" by "Above This"])  // Creates an in-memory collection with 3 songs in it
+collection c4 = collection(["Empath" by "Fayne", "Full Tilt" by "Johnny Booth", "7L7" by "Above This"])  // (1)!
+collection c5 = collection(listVar) // (2)!
 ```
 
-The above collections (aside from the last) all define the same playlist. `c4` is defined by a cast-like syntax, taking in a song list within the `collection( )`. The created collection doesn't exist other than in the program's memory, but may act like any other collection.
+1. Creates an in-memory collection with 3 songs in it
+2. Creates an in-memory collection of the songs in the given `song[]` list
+
+The first three collections all define the same playlist. `c4` and `c5` are defined by a cast-like syntax, taking in a song list within the `collection( )`. The created collection doesn't exist other than in the program's memory, but may act like any other collection.
 
 A collection may also have weights assigned to it, along with an order, in the syntax of:
 
