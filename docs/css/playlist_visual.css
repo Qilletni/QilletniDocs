@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 20px; /* Space between playlists */
-    margin: 20px auto;
+    margin: 10px auto 20px;
     max-width: 1300px; /* Adjust as needed for page width */
 }
 
@@ -14,9 +14,9 @@
     max-width: 600px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--md-default-fg-color--lightest);
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--md-default-bg-color);
 }
 
 /* Playlist Title */
@@ -25,8 +25,8 @@
     font-size: 1em;
     font-weight: bold;
     padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    background-color: #f9f9f9;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    background-color: var(--md-default-bg-color--light);
 }
 
 /* Legend */
@@ -35,16 +35,13 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    background-color: #fff;
-    /*border: 1px solid #ddd;*/
-    margin-bottom: 10px;
+    background-color: var(--md-default-bg-color);
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     margin-right: 15px;
-    margin-bottom: 10px;
 }
 
 .color-square {
@@ -56,7 +53,7 @@
 
 .song-name {
     font-size: 14px;
-    color: #333;
+    color: var(--md-typeset-color);
 }
 
 /* Playlist Rows */
@@ -71,11 +68,11 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
     /*border-bottom: 1px solid #ddd;*/
 }
 
 .song:hover {
     /*transform: scale(1.02);*/
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
 }
