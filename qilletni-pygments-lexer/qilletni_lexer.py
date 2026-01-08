@@ -26,8 +26,8 @@ class QilletniLexer(RegexLexer):
         'root': [
             # Comments
             (r'//.*?$', Comment.Single),
-            (r'/\*\*.*?\*/', Comment.Multiline),
-            (r'/\*.*?\*/', Comment.Multiline),
+            (r'/\*\*[\s\S]*?\*/', Comment.Multiline),
+            (r'/\*[\s\S]*?\*/', Comment.Multiline),
 
             # Strings: match a double-quoted string with possible escapes
             (r'"(?:\\.|[^"\\])*"', String),

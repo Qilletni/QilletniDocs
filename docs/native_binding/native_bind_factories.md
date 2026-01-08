@@ -17,7 +17,7 @@ public class MyLibraryFunctions {
 }
 ```
 
-The order of the parameters don't matter, nor do they necessarily need to be set to a class member variable, but it is recommended to. It is not recommended to execute code in the constructor, that should be reserved for methods annotated with [@BeforeAnyInvocation](https://api.qilletni.dev/Qilletni.qilletni.api.main/is/yarr/qilletni/api/lib/annotations/BeforeAnyInvocation.html) as outlined [here](/native_binding/native_functions/#preload-methods).
+The order of the parameters don't matter, nor do they necessarily need to be set to a class member variable, but it is recommended to. It is not recommended to execute code in the constructor, that should be reserved for methods annotated with [@BeforeAnyInvocation](https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lib/annotations/BeforeAnyInvocation.html) as outlined [here](/native_binding/native_functions/#preload-methods).
 
 ## Predefined Injectable Classes
 
