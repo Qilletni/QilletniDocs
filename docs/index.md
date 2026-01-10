@@ -70,7 +70,7 @@ The following program takes a Spotify playlist, plays 2 songs from it, and then 
 import "spotify:recommendations.ql"
 import "spotify:play_redirect.ql"
 import "spotify:playlist_tools.ql"
-import "std:types/collections/stack.ql"
+import "std:util/stack.ql"
 
 // Songs to play more frequently
 weights powerRotation =

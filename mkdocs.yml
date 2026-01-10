@@ -74,6 +74,7 @@ nav:
       - Documenting: packages/documenting.md
     - Misc:
       - Package Configs: misc/package_configs.md
+      - Debugging: misc/debug.md
       - IDE Integration: misc/ide_integration.md
       - Hosting Docs: misc/hosting_docs.md
   - Official Packages:
