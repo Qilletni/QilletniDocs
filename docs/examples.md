@@ -1,5 +1,7 @@
 # Code Examples
 
+These are a couple quick examples of the Qilletni language. For package-specific examples, see the `examples/` directory in the relevant package, or see the [Official Packages](/official_packages/official_packages) section for more detail and explanations.
+
 ## Adding Metadata Tags
 
 The following uses the [metadata](https://docs.qilletni.dev/library/metadata/) library. This attaches data to songs, albums and artists to help filter or organize music. This uses an internal database, so metadata persists.

@@ -4,7 +4,7 @@ Qilletni may generate docs for a package in a stateful way, allowing for cross-p
 
 Because of this, a stateful cache of the parsed packages is needed. When a package's docs are generated, the internal structure of each file is cached, so the system can easily add extension methods on cross-referenced types.
 
-!!! info
+!!! under-construction "Documentation in progress"
 
     This page has been truncated and will be rewritten due to a recent overhaul in how docs are hosted.
     For now, see [Qilletni/qilletni-package-docs](https://github.com/Qilletni/qilletni-package-docs) to see how [https://docs.qilletni.dev/](https://docs.qilletni.dev/) is hosted and generated via GitHub Actions.

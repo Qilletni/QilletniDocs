@@ -38,8 +38,8 @@ song jealous = "Jealous" by "Chromeo" // (1)!
 song cachedJealous = "Jealous" by "Chromeo" // (2)!
 ```
 
-1. Makes an API call, and resolves to `"Jealous (I Ain't With It)" by "Chromeo"`, which is a fuzzy match
-   `"Jealous" by "Chromeo"` is now in the database, and does not need fuzzy searching for future lookups
+1. Makes an API call, and resolves to `"Jealous (I Ain't With It)" by "Chromeo"`, which is a fuzzy match to
+   `"Jealous" by "Chromeo"` which is now in the database, and does not need fuzzy searching for future lookups
 2. Makes a database lookup, no API call needed
 
 To set the search strategy to the default one, use `setFetchResolveStrategy("default")`. From here, database lookups are only used for exact matches.

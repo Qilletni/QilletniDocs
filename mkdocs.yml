@@ -57,8 +57,7 @@ nav:
         - Types:
             - Built-in types: language/types/built_in_types.md
             - Entities: language/types/entities.md
-  #          - Lists*: language/types/lists.md
-            - Type system*: language/types/type_system.md
+            - Type system (WIP): language/types/type_system.md
         - Service Providers: language/service_providers.md
         - Documenting Code: language/documenting_code.md
         - Debugging: language/debugging.md
@@ -75,20 +74,19 @@ nav:
     - Misc:
       - Package Configs: misc/package_configs.md
       - Debugging: misc/debug.md
-      - IDE Integration: misc/ide_integration.md
-      - Hosting Docs: misc/hosting_docs.md
+      - IDE Integration (WIP): misc/ide_integration.md
+      - Hosting Docs (WIP): misc/hosting_docs.md
   - Official Packages:
       - Official Packages: official_packages/official_packages.md
       - Service Providers:
         - Spotify: official_packages/service_providers/spotify.md
         - Tidal: official_packages/service_providers/tidal.md
         - Last.fm: official_packages/service_providers/lastfm.md
-      - Standard Library: packages/std.md
-      - LastFm: packages/lastfm.md
-      - JSON: packages/json.md
-      - Metadata: packages/metadata.md
-      - HTTP: packages/http.md
-      - Postgres: packages/postgres.md
+#      - Standard Library: packages/std.md
+      - JSON: official_packages/json.md
+#      - Metadata: packages/metadata.md
+#      - HTTP: packages/http.md
+#      - Postgres: packages/postgres.md
   - Examples:
     - General: examples.md
 
