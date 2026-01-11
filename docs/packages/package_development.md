@@ -32,3 +32,9 @@ The run command may optionally build the native jar before running, using the `-
 ```
 
 This will auto-detect the Gradle project and build the native jar.
+
+## Packages in Gradle Submodules
+
+!!! under-construction "Documentation in progress"
+
+    Qilletni has the ability to build packages in Gradle submodules. Documentation is coming soon, but in the meantime see how `qilletni/spotify` does this with its [`.qilletni_build.properties`](https://github.com/Qilletni/Qilletni/blob/master/qilletni-spotify/.qilletni_build.properties) file.
