@@ -8,7 +8,7 @@ Qilletni comes with following primary types to get started with in its standard 
 - Lists (`type[]`)
 - Maps (`Map`)
 - Optional (`Optional`)
-- Any (`any`) // TODO
+- Any (`any`)
 - Songs (`song`)
 - Albums (`album`)
 - Playlists (`collection`)
@@ -177,6 +177,8 @@ map.put("b", 2)
 print(map.get("a"))  // Prints: "1"
 ```
 
+The functions available for Map are available in the [Map docs](https://docs.qilletni.dev/library/std/entity/Map).
+
 ## Optional
 
 Because Qilletni doesn't support the concept of an empty/null value, Optionals are used to ensure the programmer is always aware of when a value isn't present. They typically should only be used for return values.
@@ -190,12 +192,24 @@ Optional b = Optional.fromValue("Hello")
 
 An Optional can have its empty status checked with `hasValue()` and have its value inspected with `getValue()`. The latter will exit the program and throw an error if no value is found in the optional.
 
+The functions available for Map are available in the [Optional docs](https://docs.qilletni.dev/library/std/entity/Optional).
+
 ```qilletni
 Optional a = Optional.fromEmpty()
 
 printf("Value: %b", [a.hasValue()])  // Prints "false"
 
 any aValue = a.getValue()  // Errors! No value is found
+```
+
+## any
+
+The `any` type is similar to `dynamic` in other languages. It may be any type, and it may be reassigned to any type. When using this, it is suggested to use the `is` type check.
+
+This type is specifically useful when dealing with lists that may contain multiple types, such as:
+
+```qilletni
+any[] multiTypes = any["a", 1, false]
 ```
 
 ## Music Types
@@ -296,7 +310,7 @@ The first three collections all define the same playlist. `c4` and `c5` are defi
 A collection may also have weights assigned to it, along with an order, in the syntax of:
 
 ```qilletni
-collection c1 = "Chill Bruh Moment" by "rubbaboy" order[shuffle] weights[myWeights]
+collection c1 = "Chill Bruh Moment" collection by "rubbaboy" order[shuffle] weights[myWeights]
 ```
 
 Where `myWeights` is a variable of type `weights`. `order` may either by "shuffle" or "sequential", defaulting to the former if unspecified. To see more information regarding weights, see [Weights](#weights).
@@ -518,7 +532,7 @@ weights demoWeights =
     });
 </script>
 
-### Multiplicative  Weights
+### Multiplicative Weights
 
 A less obtrusive way of shuffling a playlist is using multiplicative weights. Instead of having a set probability for every time a song is played, they simply increase the chance a song is played. This takes the following format:
 
@@ -556,7 +570,7 @@ Let's say the collection has 10 songs in it, one being "Reflections". The follow
 
 ## Java References
 
-Java references are useful for interfacing with native methods that may require some special data to be associated with the field (or often times with the containing entity). A java reference may be assigned with either the keyword `empty` to signify a null Java reference internally, or as a return value from a function (usually a native function).
+Java references are useful for interfacing with native methods that may require some special data to be associated with the field (or often times with the containing entity). A Java reference may be assigned with either the keyword `empty` to signify a null Java reference internally, or as a return value from a function (usually a native function).
 
 ```qilletni
 java myRef = empty
