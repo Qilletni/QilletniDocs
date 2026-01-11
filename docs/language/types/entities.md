@@ -85,3 +85,22 @@ Car.create()    // Returns new Car
 Car.getSpeed()  // Error, must be invoked on an instance of Car
 ```
 
+## String Visualization
+
+Similar to other languages, Qilletni supports a `toString()` function to visualize the string representation of an entity.
+
+If the function `toString()` is defined, it will be called when getting the string representation of an entity, such as printing it out. This may also be called directly.
+
+For example, if the following function was inserted in the entity `User` from the first section of this page:
+
+```qilletni
+fun toString() {
+    return "User(id=%d, username='%s')".format([_id, username])
+}
+```
+
+Then printing out a user would look like:
+
+```
+User(id=1, username='bob')
+```
