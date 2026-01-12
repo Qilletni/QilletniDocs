@@ -362,7 +362,7 @@ Below is a visualization of a normal random shuffle of 20 songs through a playli
 </div>
 
 <script>
-    window.addEventListener("load", function() {
+    function initWeightsVisualization() {
         const songColors = {
             "MANGO": "#f44336", // Red
             "Reflections": "#2196f3", // Blue
@@ -374,12 +374,18 @@ Below is a visualization of a normal random shuffle of 20 songs through a playli
 
         const unweighted = ["Other", "Other", "Other", "Reflections", "Other", "MANGO", "Other", "Other", "Other", "Other", "Other", "Other", "MANGO", "Other", "Other", "Other", "Reflections", "Other", "Other", "Other"];
         const weighted = ["Reflections", "Other", "MANGO", "Other", "Reflections", "Other", "Reflections", "Other", "Other", "MANGO", "Other", "Reflections", "MANGO", "Other", "Other", "Other", "MANGO", "Other", "MANGO", "Reflections"];
-    
+
         renderLegend("legend-container", songColors);
-    
+
         renderPlaylist("playlist-1", songColors, unweighted, "Unweighted Shuffle");
         renderPlaylist("playlist-2", songColors, weighted, "Weighted");
-    });
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
 </script>
 
 ### Nested Weights
@@ -433,7 +439,7 @@ weights demoWeights =
 </div>
 
 <script>
-    window.addEventListener("load", function() {
+    function initWeightsVisualization() {
         // Colors in the legend
         const displayColors = {
             "child playlist": "#f44336", // Red
@@ -457,7 +463,13 @@ weights demoWeights =
     
         renderPlaylist("playlist-1-2", songColors, first, "Shuffled", names);
         renderPlaylist("playlist-2-2", songColors, second, "Sequential", names);
-    });
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
 </script>
 
 As you can see, when the child playlist is sequential, each time a song is selected from the collection, it is the next song in the collection.
@@ -513,7 +525,7 @@ weights demoWeights =
 </div>
 
 <script>
-    window.addEventListener("load", function() {
+    function initWeightsVisualization() {
         const songColors = {
             "MANGO": "#f44336", // Red
             "Reflections": "#2196f3", // Blue
@@ -529,7 +541,13 @@ weights demoWeights =
         renderPlaylist("playlist-1-3", songColors, first, "| Separator");
         renderPlaylist("playlist-2-3", songColors, second, "|! Separator");
         renderPlaylist("playlist-3-3", songColors, third, "|~ Separator");
-    });
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
 </script>
 
 ### Multiplicative Weights
@@ -552,7 +570,7 @@ Let's say the collection has 10 songs in it, one being "Reflections". The follow
 </div>
 
 <script>
-    window.addEventListener("load", function() {
+    function initWeightsVisualization() {
         const songColors = {
             "Reflections": "#2196f3", // Blue
             "Other": "#4caf50", // Green
@@ -565,7 +583,13 @@ Let's say the collection has 10 songs in it, one being "Reflections". The follow
     
         renderPlaylist("playlist-1-4", songColors, unweighted, "Unweighted Shuffle");
         renderPlaylist("playlist-2-4", songColors, weighted, "Multiplicative Weights");
-    });
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
 </script>
 
 ## Java References

@@ -8,7 +8,7 @@ Qilletni is a powerful Domain Specific Language for all things music. Seamlessly
 
 - **Platform Integration**: Import packages to gain access to different music platforms, such as **spotify**, **tidal** and **lastfm**
 - **Platform-Agnostic Types**: Songs, artists, albums, etc. are automatically converted between music platforms for seamless use
-- **Weight-Based Music Selection**: Use [weighted collections](language/types/built_in_types.md#Weights) for advanced playlist orchestration
+- **Weight-Based Music Selection**: Use [weighted collections](language/types/built_in_types.md#weights) for advanced playlist orchestration
 - **Native Java Bindings**: Leverage Java libraries for enhanced functionality as if they were written in Qilletni
 - **Package Support**: Create your own reusable package with our package manager, or leverage existing packages such as [http](https://docs.qilletni.dev/library/http/), [json](https://docs.qilletni.dev/library/json/), [postgres](https://docs.qilletni.dev/library/postgres/), or [metadata](https://docs.qilletni.dev/library/metadata/)
 
@@ -18,7 +18,7 @@ Qilletni is a powerful Domain Specific Language for all things music. Seamlessly
 
 ## Get Started
 
-Jump right into Qilletni with our [Getting Started Guide](quickstart/getting_started.md), where you’ll learn how to:
+Jump right into Qilletni with the [Getting Started Guide](quickstart/getting_started.md), where you’ll learn how to:
 
 - Install Qilletni.
 - Write your first program.
