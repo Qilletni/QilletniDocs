@@ -1,0 +1,2892 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation, code examples, and library help for Qilletni">
+      
+      
+      
+        <link rel="canonical" href="https://qilletni.dev/language/types/built_in_types/">
+      
+      
+        <link rel="prev" href="../../syntax/extension_functions/">
+      
+      
+        <link rel="next" href="../entities/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Built-in types - Qilletni Language Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/playlist_visual.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#built-in-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Qilletni Language Docs" class="md-header__button md-logo" aria-label="Qilletni Language Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Qilletni Language Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Built-in types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Qilletni/Qilletni" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../official_packages/official_packages/" class="md-tabs__link">
+          
+  
+  
+  Official Packages
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../examples/" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Qilletni Language Docs" class="md-nav__button md-logo" aria-label="Qilletni Language Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Qilletni Language Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Qilletni/Qilletni" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quickstart
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/spotify_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/tidal_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tidal Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/lastfm_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Last.fm Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project_structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../syntax/operators/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syntax
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_4_3" id="__nav_1_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-in types
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-in types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicit-subtypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit subtypes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-subtypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit subtypes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtype-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtype transformations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        any
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#music-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Music Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Music Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#songs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Songs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#albums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Albums
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playlists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nested-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-call-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Call Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collection-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-separators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Separators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicative-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplicative Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Type system (WIP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documenting_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documenting Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../debugging.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Binding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Native Binding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../native_binding/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../native_binding/native_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../native_binding/native_bind_factories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Bind Factories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../native_binding/background_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../native_binding/usage_examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Packages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packages/package_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packages/package_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packages/documenting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documenting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/package_configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/ide_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDE Integration (WIP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/hosting_docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting Docs (WIP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../official_packages/official_packages/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Official Packages
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../examples/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicit-subtypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit subtypes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-subtypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit subtypes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtype-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtype transformations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        any
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#music-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Music Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Music Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#songs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Songs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#albums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Albums
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playlists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nested-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-call-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Call Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collection-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-separators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Separators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicative-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplicative Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../.." class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../introduction/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Language
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Types
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="built-in-types">Built-in types</h1>
+<p>Qilletni comes with following primary types to get started with in its standard library:</p>
+<ul>
+<li>Numbers (<code>int</code>, <code>double</code>)</li>
+<li>Strings (<code>string</code>)</li>
+<li>Booleans (<code>boolean</code>)</li>
+<li>Lists (<code>type[]</code>)</li>
+<li>Maps (<code>Map</code>)</li>
+<li>Optional (<code>Optional</code>)</li>
+<li>Any (<code>any</code>)</li>
+<li>Songs (<code>song</code>)</li>
+<li>Albums (<code>album</code>)</li>
+<li>Playlists (<code>collection</code>)</li>
+<li>Artists (<code>Artist</code>)</li>
+<li>Weights (<code>weights</code>)</li>
+<li>Java Reference (<code>java</code>)</li>
+</ul>
+<h2 id="numbers">Numbers</h2>
+<p>Numbers in Qilletni are relatively rudimentary. There are two types, <code>int</code> and <code>double</code>. <code>int</code>s can go from <code>`-2^31</code> to <code>2^31 - 1</code>, whereas <code>double</code>s are floating points, and follow the IEEE 754 standard for 64-bit floating point numbers.</p>
+<p><code>int</code>s and <code>double</code>s may be converted to one another, via the syntax below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">double</span><span class="w"> </span>d<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span>i<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="err">(</span>d<span class="err">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">print</span><span class="err">(</span>i<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;3&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">double</span><span class="w"> </span>d2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="err">(</span>i<span class="err">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nf">print</span><span class="err">(</span>d2<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;3.0&quot;</span>
+</code></pre></div>
+<p>If math operations go between both <code>int</code>s and <code>double</code>s, generally they will return as a <code>double</code>. Exclusions for this are addition, subtraction, and integer division.</p>
+<h2 id="strings">Strings</h2>
+<p>Strings are immutable sequences of characters. They may be formatted via</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s">&quot;Number: %d  Float (3 decimal places): %.3f  String: %s&quot;</span><span class="err">.</span>format<span class="err">([</span><span class="m">123</span><span class="err">,</span><span class="w"> </span><span class="m">3.14159</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="err">])</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Outputs:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//   Number: 123  Float (3 decimal places): 3.142  String: hello</span>
+</code></pre></div>
+<p>The <code>format</code> method takes in an array of expressions to format with the string. For simplicity, formatting follows Java's implementation, outlined <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Formatter.html">here</a>.</p>
+<p>The same can be done with <code>printf</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">printf</span><span class="err">(</span><span class="s">&quot;Hello %s!&quot;</span><span class="err">,</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;World&quot;</span><span class="err">])</span><span class="w">  </span><span class="c1">// Prints &quot;Hello World!&quot;</span>
+</code></pre></div>
+<p>Which is a formatting variation of the <code>print</code> command. Strings may also be escaped with a backslash:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">print</span><span class="err">(</span><span class="s">&quot;Hello \&quot;World!\&quot;&quot;</span><span class="err">)</span><span class="w">  </span><span class="c1">// Prints &#39;Hello &quot;World!&quot;&#39;</span>
+</code></pre></div></p>
+<h2 id="lists">Lists</h2>
+<p>Lists are ordered collections of either built-in types or entity instances, that may be manipulated. They may ether be created explicitly with a type or have its type assumed implicitly.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">string</span><span class="err">[]</span><span class="w"> </span>strs1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="err">]</span><span class="w">  </span><span class="c1">// Implicit type</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">string</span><span class="err">[]</span><span class="w"> </span>strs2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="err">[</span><span class="s">&quot;d&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;f&quot;</span><span class="err">]</span><span class="w">  </span><span class="c1">// Explicit type</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">any</span><span class="err">[]</span><span class="w"> </span>strs3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;g&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;h&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="err">]</span><span class="w">  </span><span class="c1">// Implicitly a string[]</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kt">any</span><span class="err">[]</span><span class="w"> </span>strs4<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="err">[</span><span class="s">&quot;j&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;k&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="err">]</span><span class="w">  </span><span class="c1">// Explicitly a string[]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nf">print</span><span class="err">(</span>strs1<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nf">print</span><span class="err">(</span>strs2<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nf">print</span><span class="err">(</span>strs3<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nf">print</span><span class="err">(</span>strs4<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>strs1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">]</span><span class="w">  </span><span class="c1">// Errors!</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1">//      ^ Even through the original list was defined with an implcit type, the variable retains its set type forever</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="kt">any</span><span class="err">[]</span><span class="w"> </span>ints<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">]</span><span class="w">  </span><span class="c1">// Implicit type</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>strs3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">]</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nf">print</span><span class="err">(</span>ints<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">int</span><span class="err">[])</span><span class="w">  </span><span class="c1">// true</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nf">print</span><span class="err">(</span>strs3<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">int</span><span class="err">[])</span><span class="w">  </span><span class="c1">// true</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="nf">print</span><span class="err">(</span>strs3<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span><span class="w">  </span><span class="c1">// false  strs3 was any any[] but is not an int[]</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="kt">string</span><span class="err">[]</span><span class="w"> </span>uhOh<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">3.0</span><span class="err">]</span><span class="w">  </span><span class="c1">// Errors!</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="c1">//              ^ Cannot force all of these types to be strings</span>
+</code></pre></div>
+<h3 id="implicit-subtypes">Implicit subtypes</h3>
+<p>Every list has a <strong>subtype</strong>. A list's subtype may either be defined explicitly in the list expression, or implicitly in the expression. As per normal variables, once a <strong>variable</strong> is defined with a type, it may not change. The below example shows a list variable being created with a defined type <code>string[]</code> but then assigned to a  list with an implicitly defined type. This list variable is forever a <code>string[]</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">string</span><span class="err">[]</span><span class="w"> </span>strs1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="err">]</span><span class="w">  </span><span class="c1">// Implicit type</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>strs1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">]</span><span class="w">  </span><span class="c1">// Errors!</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">//      ^ Even through the original list was defined with an implcit type, the variable retains its set type forever</span>
+</code></pre></div>
+<p>If a list is created with an implicit type and not all types are the same in the list, it is assumed an <code>any[]</code>, as shown below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">any</span><span class="err">[]</span><span class="w"> </span>mixed<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">3.0</span><span class="err">]</span>
+</code></pre></div>
+<p>An <code>any</code> list may also be created with a consistent type. This means the actual containing list has a type, but the variable could be reassigned to a list with another type. This is done through a type assumption of its contents upon creation.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">any</span><span class="err">[]</span><span class="w"> </span>consistent<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nf">print</span><span class="err">(</span>consistent<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">int</span><span class="err">[])</span><span class="w">  </span><span class="c1">// true</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>consistent<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="err">]</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nf">print</span><span class="err">(</span>consistent<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span><span class="w">  </span><span class="c1">// true</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>consistent<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">any</span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">]</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nf">print</span><span class="err">(</span>consistent<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">int</span><span class="err">[])</span><span class="w">     </span><span class="c1">// false</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nf">print</span><span class="err">(</span>consistent<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span><span class="w">  </span><span class="c1">// false</span>
+</code></pre></div>
+<p>The end of the above example demonstrates that <code>any</code> is also a type, and a list can be created with that as its subtype. This means any value could be added to the list in the future, despite it currently containing only one type. No type assumptions are made in an <code>any[]</code> definition.</p>
+<h3 id="explicit-subtypes">Explicit subtypes</h3>
+<p>Explicit subtypes are fairly straightforward. They are useful when you are passing in parameters to a function, where you want a strict type on the list, or perhaps an empty list where no type assumptions can be made. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">fun</span><span class="w"> </span><span class="nf">handleList</span><span class="err">(</span>list<span class="err">)</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="err">(</span>list<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">string</span><span class="err">[])</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="nf">print</span><span class="err">(</span><span class="s">&quot;String list&quot;</span><span class="err">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="err">(</span>list<span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="kt">int</span><span class="err">[])</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="nf">print</span><span class="err">(</span><span class="s">&quot;Int list&quot;</span><span class="err">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="nf">print</span><span class="err">(</span><span class="s">&quot;Unknown list&quot;</span><span class="err">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="err">}</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="err">}</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nf">handleList</span><span class="err">(</span><span class="kt">string</span><span class="err">[</span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="err">])</span><span class="w">  </span><span class="c1">// Prints &quot;String list&quot;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nf">handleList</span><span class="err">(</span><span class="kt">int</span><span class="err">[</span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">])</span><span class="w">  </span><span class="c1">// Prints &quot;Int list&quot;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nf">handleList</span><span class="err">(</span><span class="kt">int</span><span class="err">[])</span><span class="w">  </span><span class="c1">// Prints &quot;Int list&quot;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nf">handleList</span><span class="err">([])</span><span class="w">  </span><span class="c1">// Prints &quot;Unknown list&quot;  - No explicit subtype</span>
+</code></pre></div>
+<h3 id="subtype-transformations">Subtype transformations</h3>
+<p>Sometimes when a list is created, it may have ambiguous types that should actually be all the same. An example of this is if a list of song IDs (strings) are present in a <code>song[]</code>. The Qilletni feature of subtype transformations allow the system to attempt to convert the string to the real type.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">song</span><span class="err">[]</span><span class="w"> </span>songs<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">song</span><span class="err">[</span><span class="s">&quot;0PmoG29VeyZEEWuSJyfizZ&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;https://open.spotify.com/track/58z4qdwM0zpWJEGfjSptR7?si=1d6a32c7f04b4c98&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;6BVH6nyMBj601mSaUbbqKc&quot;</span><span class="err">]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nf">print</span><span class="err">(</span>songs<span class="err">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">// ^ Prints: [song(&quot;Deception&quot; by &quot;Glae&quot;), song(&quot;Feel the Pressure&quot; by &quot;DRAIN&quot;), song(&quot;Where Light Divides the Holler&quot; by &quot;Knocked Loose&quot;)]</span>
+</code></pre></div>
+<p>This feature only works with expressions that would normally be able to be assigned to their type, such as an ID or URL string. This only works with lists of an explicit type, so the following would <strong>NOT</strong> work:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">song</span><span class="err">[]</span><span class="w"> </span>songs<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;0PmoG29VeyZEEWuSJyfizZ&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;6BVH6nyMBj601mSaUbbqKc&quot;</span><span class="err">]</span><span class="w">  </span><span class="c1">// Errors! This assigns a string[] to a song[]</span>
+</code></pre></div>
+<p>The following table shows the supported type transformations.</p>
+<table>
+<thead>
+<tr>
+<th>From Type</th>
+<th>To Type</th>
+<th>Description of input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>song</code></td>
+<td>ID or URL of the song</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>album</code></td>
+<td>ID or URL of album</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>collection</code></td>
+<td>ID or URL of collection</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td><code>double</code></td>
+<td>Any int</td>
+</tr>
+</tbody>
+</table>
+<h2 id="maps">Maps</h2>
+<p>Maps are a normal Qilletni entity, acting as a wrapper of Java's HashMap. They may be created with <code>new Map()</code> or <code>Map.fromList()</code> which takes in a list of even size and pairs items together. They may store anything.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Map<span class="w"> </span>map<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">Map</span><span class="err">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>map<span class="err">.</span><span class="nf">put</span><span class="err">(</span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">1</span><span class="err">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>map<span class="err">.</span><span class="nf">put</span><span class="err">(</span><span class="s">&quot;b&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nf">print</span><span class="err">(</span>map<span class="err">.</span><span class="nf">get</span><span class="err">(</span><span class="s">&quot;a&quot;</span><span class="err">))</span><span class="w">  </span><span class="c1">// Prints: &quot;1&quot;</span>
+</code></pre></div>
+<p>The functions available for Map are available in the <a href="https://docs.qilletni.dev/library/std/entity/Map">Map docs</a>.</p>
+<h2 id="optional">Optional</h2>
+<p>Because Qilletni doesn't support the concept of an empty/null value, Optionals are used to ensure the programmer is always aware of when a value isn't present. They typically should only be used for return values.</p>
+<p>The Optional entity defines the following static methods to create an Optional:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Optional<span class="w"> </span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span>Optional<span class="err">.</span><span class="nf">fromEmpty</span><span class="err">()</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Optional<span class="w"> </span>b<span class="w"> </span><span class="o">=</span><span class="w"> </span>Optional<span class="err">.</span><span class="nf">fromValue</span><span class="err">(</span><span class="s">&quot;Hello&quot;</span><span class="err">)</span>
+</code></pre></div>
+<p>An Optional can have its empty status checked with <code>hasValue()</code> and have its value inspected with <code>getValue()</code>. The latter will exit the program and throw an error if no value is found in the optional.</p>
+<p>The functions available for Map are available in the <a href="https://docs.qilletni.dev/library/std/entity/Optional">Optional docs</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Optional<span class="w"> </span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span>Optional<span class="err">.</span><span class="nf">fromEmpty</span><span class="err">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nf">printf</span><span class="err">(</span><span class="s">&quot;Value: %b&quot;</span><span class="err">,</span><span class="w"> </span><span class="err">[</span>a<span class="err">.</span><span class="nf">hasValue</span><span class="err">()])</span><span class="w">  </span><span class="c1">// Prints &quot;false&quot;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kt">any</span><span class="w"> </span>aValue<span class="w"> </span><span class="o">=</span><span class="w"> </span>a<span class="err">.</span><span class="nf">getValue</span><span class="err">()</span><span class="w">  </span><span class="c1">// Errors! No value is found</span>
+</code></pre></div>
+<h2 id="any">any</h2>
+<p>The <code>any</code> type is similar to <code>dynamic</code> in other languages. It may be any type, and it may be reassigned to any type. When using this, it is suggested to use the <code>is</code> type check.</p>
+<p>This type is specifically useful when dealing with lists that may contain multiple types, such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">any</span><span class="err">[]</span><span class="w"> </span>multiTypes<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">any</span><span class="err">[</span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">1</span><span class="err">,</span><span class="w"> </span><span class="kc">false</span><span class="err">]</span>
+</code></pre></div>
+<h2 id="music-types">Music Types</h2>
+<p>Qilletni's whole purpose is dealing with music, so certain functions are baked into the language to assist with that.</p>
+<p>All music data is handled by the currently active <a href="/service_providers.md">Service Provider</a>. A service provider assumes there is an ID present for each song, album, collection, and artist. The individual service provider has the ability to parse URLs to extract the relevant ID present. For examples, assume whenever you see an ID, a URL may also be passed in.</p>
+<p>If the internal <a href="/misc/package_configs.md">package config</a> property <code>eagerLoad</code> is <code>true</code>, the music type will be immediately queried, and will error out if invalid. If the property is not found or <code>false</code>, it will be queried whenever the first method that references a property of the type is invoked. See the following example where <code>eagerLoad</code> is <code>false</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">song</span><span class="w"> </span>mySong<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Haunted&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Burdened Hearts&quot;</span><span class="w">  </span><span class="c1">// Song is not loaded yet, no API calls have been made</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nf">print</span><span class="err">(</span>mySong<span class="err">.</span><span class="nf">getAlbum</span><span class="err">())</span><span class="w">  </span><span class="c1">// The song is queried. Prints &#39;album(&quot;The Best of Times&quot; by &quot;Burdened Hearts&quot;)&#39;</span>
+</code></pre></div>
+<p>When using a title and an artist, native music types are defined by the following syntax:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&lt;type&gt; &lt;variable name&gt; = &lt;title&gt; &lt;type&gt; by &lt;artist&gt;
+</code></pre></div>
+<p>By default, the <code>&lt;type&gt;</code> before <code>by</code> defaults to <code>song</code>, so it may not be included. So for example, definitions may be</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">song</span><span class="w"> </span>s1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Impulse&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Harroway&quot;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kt">song</span><span class="w"> </span>s2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Heavy Rain&quot;</span><span class="w"> </span><span class="kt">song</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Konami Kode&quot;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">album</span><span class="w"> </span>a1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Nublar&quot;</span><span class="w"> </span><span class="kt">album</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;XO Armor&quot;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kt">collection</span><span class="w"> </span>c1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Polish RAVE&quot;</span><span class="w"> </span><span class="kt">collection</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;rubbaboy&quot;</span>
+</code></pre></div>
+<h3 id="songs">Songs</h3>
+<p>The <code>song</code> type in Qilletni represents a song that may be played on a streaming service. A service provider may also count something like a podcast as a song. It is uniquely identified by an ID, identified (sometimes ambiguously) by one or more artists and a title, and has an album. A <code>song</code> may be defined by the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">song</span><span class="w"> </span>s1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fauna&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Apothica&quot;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kt">song</span><span class="w"> </span>s2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2HdTQdGeProvKc35VdNfhD&quot;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">song</span><span class="w"> </span>s3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://open.spotify.com/track/2HdTQdGeProvKc35VdNfhD?si=3060f8808cdd4d8c&quot;</span>
+</code></pre></div>
+<p>All the above songs define the same song. For a song to be added to the queue, playlist, etc. the <code>play</code> keyword is used. By default, this adds it to the queue, however it may be redirected to perform other actions, dependent on the service provider.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">play</span><span class="w"> </span><span class="s">&quot;Dirty Floor&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Sypha&quot;</span><span class="w">  </span><span class="c1">// Adds the song to the queue</span>
+</code></pre></div>
+<p>An example from the spotify library to add songs to a list is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// Route all played songs to this list</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kt">song</span><span class="err">[]</span><span class="w"> </span>songList<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nf">redirectPlayToList</span><span class="err">(</span>songList<span class="err">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="k">play</span><span class="w"> </span><span class="s">&quot;Child&#39;s Play&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Hara Kiri&quot;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="k">play</span><span class="w"> </span><span class="s">&quot;Terror&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Dread Engine&quot;</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nf">print</span><span class="err">(</span>songList<span class="err">)</span><span class="w">  </span><span class="c1">// Prints: &#39;[song(&quot;Child&#39;s Play&quot; by &quot;Hara Kiri&quot;), song(&quot;Terror&quot; by &quot;Dread Engine&quot;)]&#39;</span>
+</code></pre></div>
+<p>This may be useful if you want to batch add songs to a playlist, perform some kind of analysis on it, etc.</p>
+<p><code>play</code> redirects are covered more (// TODO)</p>
+<h3 id="albums">Albums</h3>
+<p>The <code>album</code> type represents an album that songs may be on, with an ID, name, and one or more artists. An album may be defined by:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">album</span><span class="w"> </span>a1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Here &amp; Now&quot;</span><span class="w"> </span><span class="kt">album</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Framework&quot;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kt">album</span><span class="w"> </span>a2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;7ulI5y1UiuepuQD61gcKHo&quot;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kt">album</span><span class="w"> </span>a3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://open.spotify.com/album/7ulI5y1UiuepuQD61gcKHo?si=1Ip8PdIdTQKCtlJiXFhyIg&quot;</span>
+</code></pre></div>
+<p>The above album definitions all represent the same albums.</p>
+<div class="admonition info">
+<p class="admonition-title">Planned Feature</p>
+<p>Fetching songs from albums is a planned feature. It is already possible natively from within a service provider.</p>
+</div>
+<h3 id="playlists">Playlists</h3>
+<p>In Qilletni, a playlist is abstracted as a <code>collection</code>. A collection is what it sounds like, a collection of songs. A collection may be more than just a playlist though, it may be dynamically created from a list of songs, or may represent some other kind of song list sourced by a service provider (a list of top songs, for instance). A collection contains some basic information regarding it, such as the ID, the creator, song count, songs, and name. A collection may be defined as the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kt">collection</span><span class="w"> </span>c1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rage death kill&quot;</span><span class="w"> </span><span class="kt">collection</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;rubbaboy&quot;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kt">collection</span><span class="w"> </span>c2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2fupEjJ1lamW0dfAsXJag6&quot;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kt">collection</span><span class="w"> </span>c3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://open.spotify.com/playlist/2fupEjJ1lamW0dfAsXJag6?si=45dd2429fd0a46ba&quot;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="kt">collection</span><span class="w"> </span>c4<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">collection</span><span class="err">([</span><span class="s">&quot;Empath&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Fayne&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;Full Tilt&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Johnny Booth&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;7L7&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Above This&quot;</span><span class="err">])</span><span class="w">  </span><span class="c1">// (1)!</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="kt">collection</span><span class="w"> </span>c5<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">collection</span><span class="err">(</span>listVar<span class="err">)</span><span class="w"> </span><span class="c1">// (2)!</span>
+</code></pre></div>
+<ol>
+<li>Creates an in-memory collection with 3 songs in it</li>
+<li>Creates an in-memory collection of the songs in the given <code>song[]</code> list</li>
+</ol>
+<p>The first three collections all define the same playlist. <code>c4</code> and <code>c5</code> are defined by a cast-like syntax, taking in a song list within the <code>collection( )</code>. The created collection doesn't exist other than in the program's memory, but may act like any other collection.</p>
+<p>A collection may also have weights assigned to it, along with an order, in the syntax of:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">collection</span><span class="w"> </span>c1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Chill Bruh Moment&quot;</span><span class="w"> </span><span class="kt">collection</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;rubbaboy&quot;</span><span class="w"> </span><span class="k">order</span><span class="err">[</span>shuffle<span class="err">]</span><span class="w"> </span><span class="kt">weights</span><span class="err">[</span>myWeights<span class="err">]</span>
+</code></pre></div>
+<p>Where <code>myWeights</code> is a variable of type <code>weights</code>. <code>order</code> may either by "shuffle" or "sequential", defaulting to the former if unspecified. To see more information regarding weights, see <a href="#weights">Weights</a>.</p>
+<p>Collections may be played in a similar way playlists are, just with an additional option.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">play</span><span class="w"> </span><span class="s">&quot;96 crayons&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;rubbaboy&quot;</span><span class="w"> </span><span class="k">limit</span><span class="err">[</span><span class="m">10</span><span class="err">]</span>
+</code></pre></div>
+<p>The above will play 10 shuffled songs from the given playlist. Instead of a number, the limit parameter may also be a time, such as <code>1h</code> to play 1 hour of songs (it will stop as soon as 1+ hour has been hit) or <code>15m</code> for 15 minutes of songs.</p>
+<p>Note this may also be given a variable, as the above is simply an expression.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">play</span><span class="w"> </span>myPlaylist<span class="w"> </span><span class="k">limit</span><span class="err">[30</span>m<span class="err">]</span><span class="w">  </span><span class="c1">// Plays 30 minutes of songs</span>
+</code></pre></div>
+<h3 id="artists">Artists</h3>
+<p>Artists aren't handled as natively as other music types are, as they are an entity. The entity consists of a name and a unique ID. Below are examples of getting an artist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">song</span><span class="w"> </span>mySong<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Orchid Street&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;Arimea&quot;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>Artist<span class="w"> </span>artist<span class="w"> </span><span class="o">=</span><span class="w"> </span>mySong<span class="err">.</span><span class="nf">getArtist</span><span class="err">()</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nf">printf</span><span class="err">(</span><span class="s">&quot;Artist id: &#39;%s&#39; name: &#39;%s&#39;&quot;</span><span class="err">,</span><span class="w"> </span><span class="err">[</span>artist<span class="err">.</span><span class="nf">getId</span><span class="err">(),</span><span class="w"> </span>artist<span class="err">.</span><span class="nf">getName</span><span class="err">()])</span><span class="w">  </span><span class="c1">// Prints &quot;Artist id: &#39;6qNHuzJVAGJ8h2D0qo6wAh&#39; name: &#39;Arimea&#39;&quot;</span>
+</code></pre></div>
+<h2 id="weights">Weights</h2>
+<p>Weights in Qilletni are a unique way of playlist orchestration. They manipulate the way Qilletni chooses which songs to play while playing from a collection. The following is an example of a simple weight definition.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">25</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;MANGO&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;This Is Falling&quot;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">25</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;Reflections&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;I Sworn&quot;</span>
+</code></pre></div>
+<p>The above weights, when applied to a collection, make "MANGO" play 25% of the time, for every song picked from the playlist. Likewise, "Reflections" is played 25% of the time, independently to anything else. For percent multipliers, the song doesn't necessarily have to be in the collection it's applied to. If all the percent multipliers add up to 100%, the songs in the collection will be ignored. Note the separator <code>|</code>. This disallows for the songs to repeat, allowing for a less repetitive mix. To fine tune this, see <a href="#weight-separators">Weight Separators</a>.</p>
+<p>Below is a visualization of a normal random shuffle of 20 songs through a playlist, and the same playlist with weights applied. The playlist consists of 10 songs, including "MANGO" and "Reflections". In the rest of this, the same playlist and visualization techniques will be used, just with different weights to highlight differences.</p>
+<div id="legend-container" class="legend"></div>
+<div class="playlists-container">
+    <div id="playlist-1" class="playlist"></div>
+    <div id="playlist-2" class="playlist"></div>
+</div>
+
+<script>
+    function initWeightsVisualization() {
+        const songColors = {
+            "MANGO": "#f44336", // Red
+            "Reflections": "#2196f3", // Blue
+            // "Monarch": "#9c27b0", // Purple
+            // "Song 4": "#ffeb3b", // Yellow
+            // "Song 5": "#795548", // Brown
+            "Other": "#4caf50", // Green
+        };
+
+        const unweighted = ["Other", "Other", "Other", "Reflections", "Other", "MANGO", "Other", "Other", "Other", "Other", "Other", "Other", "MANGO", "Other", "Other", "Other", "Reflections", "Other", "Other", "Other"];
+        const weighted = ["Reflections", "Other", "MANGO", "Other", "Reflections", "Other", "Reflections", "Other", "Other", "MANGO", "Other", "Reflections", "MANGO", "Other", "Other", "Other", "MANGO", "Other", "MANGO", "Reflections"];
+
+        renderLegend("legend-container", songColors);
+
+        renderPlaylist("playlist-1", songColors, unweighted, "Unweighted Shuffle");
+        renderPlaylist("playlist-2", songColors, weighted, "Weighted");
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
+</script>
+
+<h3 id="nested-weights">Nested Weights</h3>
+<p>Weights can give you some more advanced control over how your songs are chosen from weights. Nested weights allow for the system to choose a song from a child weight every time the parent weight is chosen. Child weights (ones that are nested) must contain only percentages that add up to 100%, as something from it is always chosen. For example, the below code is equivalent to the previous example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">weights</span><span class="w"> </span>childWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;MANGO&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;This Is Falling&quot;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;Reflections&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;I Sworn&quot;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span>childWeights
+</code></pre></div>
+<p>This is equivalent because originally, each song had a 25% chance of being chosen. <code>childWeights</code> has a 50% chance of being chosen, and each song in <code>childWeights</code> has an additional 50% chance. <code>0.50 * 0.50 = 0.25 = 25%</code></p>
+<h3 id="function-call-weights">Function Call Weights</h3>
+<p>Along with nested weights, weights allow for function calls instead of chosen a song from a child weight. This acts the same as adding a child weight, but with a function (optionally with parameters) that is evaluated every time the weight is chosen. The function must always return a song. The following example is also equivalent to the last two.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">fun</span><span class="w"> </span><span class="nf">mySongFunction</span><span class="err">()</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="err">(</span><span class="nf">random</span><span class="err">(</span><span class="m">0</span><span class="err">,</span><span class="w"> </span><span class="m">10</span><span class="err">)</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="m">5</span><span class="err">)</span><span class="w"> </span><span class="err">{</span><span class="w">  </span><span class="c1">// 50% of the time</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MANGO&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;This Is Falling&quot;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Reflections&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;I Sworn&quot;</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="err">}</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="err">}</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="nf">mySongFunction</span><span class="err">()</span>
+</code></pre></div>
+<h3 id="collection-weights">Collection Weights</h3>
+<p>Weights may also use a collection to choose what song to play when a weight is selected. The song is selected as it would normally be played from the collection. This includes its own weights, ordering, etc. For example, these are two code examples, one with a collection that's shuffled, and onme that is ordered, and a visualization of their outputs. The playlist <code>child playlist</code> contains the songs <code>"I"</code>, <code>"II"</code>, and <code>"III"</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;child playlist&quot;</span><span class="w"> </span><span class="kt">collection</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;rubbaboy&quot;</span><span class="w">  </span><span class="c1">// By default shuffled</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;child playlist&quot;</span><span class="w"> </span><span class="kt">collection</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;rubbaboy&quot;</span><span class="w"> </span><span class="k">order</span><span class="err">[</span>sequential<span class="err">]</span>
+</code></pre></div>
+<div id="legend-container-2" class="legend"></div>
+<div class="playlists-container">
+    <div id="playlist-1-2" class="playlist"></div>
+    <div id="playlist-2-2" class="playlist"></div>
+</div>
+
+<script>
+    function initWeightsVisualization() {
+        // Colors in the legend
+        const displayColors = {
+            "child playlist": "#f44336", // Red
+            "Other": "#4caf50" // Green
+        };
+
+        // Songs to actually light up
+        const songColors = {
+            "I": "#f44336", // Red
+            "II": "#f44336", // Red
+            "III": "#f44336", // Red
+            "Other": "#4caf50" // Green
+        };
+
+        const first = ["II", "III", "Other", "I", "Other", "Other", "II", "I", "II", "Other", "I", "III", "Other", "Other", "II", "I", "Other", "III", "II", "Other"];
+        const second = ["Other", "Other", "I", "Other", "II", "III", "Other", "I", "Other", "Other", "II", "III", "I", "II", "Other", "III", "Other", "Other", "I", "Other"];
+
+        renderLegend("legend-container-2", displayColors);
+
+        const names = ["I", "II", "III"];
+
+        renderPlaylist("playlist-1-2", songColors, first, "Shuffled", names);
+        renderPlaylist("playlist-2-2", songColors, second, "Sequential", names);
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
+</script>
+
+<p>As you can see, when the child playlist is sequential, each time a song is selected from the collection, it is the next song in the collection.</p>
+<h3 id="list-weights">List Weights</h3>
+<p>Similar to collection weights, a weight may take in a list of songs as shorthand to defining a collection expression. This is functionally a shorthand of creating a collection that is shuffled. Each time a song is selected from the list, it is randomly chosen and played. Below is an example of a shorthand list weight, and then the equivalent with using a <code>collection</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w">  </span><span class="err">[</span><span class="s">&quot;I&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;BLACKSHAPE&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;II&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;BLACKSHAPE&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;III&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;BLACKSHAPE&quot;</span><span class="err">]</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w">  </span><span class="kt">collection</span><span class="err">([</span><span class="s">&quot;I&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;BLACKSHAPE&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;II&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;BLACKSHAPE&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;III&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;BLACKSHAPE&quot;</span><span class="err">])</span><span class="w"> </span><span class="k">order</span><span class="err">[</span>shuffle<span class="err">]</span>
+</code></pre></div>
+<h3 id="weight-separators">Weight Separators</h3>
+<p>Weights also allow for more fine grain control. The separator before each line in the weights <code>|</code> may be replaced with one of the following. The below table shows the separator and what it does when the weight is selected. In the context of the table, an individual weight is the line in the <code>weights</code> expression. So it may be a song, function call, weight, or a collection.</p>
+<table>
+<thead>
+<tr>
+<th>Separator Character</th>
+<th>Song Repeats</th>
+<th>Weight Repeats</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>|</code></td>
+<td><span class="twemoji table-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></span></td>
+<td><span class="twemoji table-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td>This song may <strong>not</strong> be chosen next, but the weight may be</td>
+</tr>
+<tr>
+<td><code>|!</code></td>
+<td><span class="twemoji table-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji table-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><strong>Both</strong> the song/line and the weight may be chosen next</td>
+</tr>
+<tr>
+<td><code>|~</code></td>
+<td><span class="twemoji table-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></span></td>
+<td><span class="twemoji table-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></span></td>
+<td><strong>Neither</strong> the song nor the weight may be chosen next</td>
+</tr>
+</tbody>
+</table>
+<p>The column Song Repeats is the song that is chosen from the collection, function, etc. If applied to a single song, the Weight Repeats column may be the same as the Song Repeats column.</p>
+<p>Below is another visualization of using the separators, using the following code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">weights</span><span class="w"> </span>childWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;MANGO&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;This Is Falling&quot;</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span><span class="s">&quot;Reflections&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;I Sworn&quot;</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span>childWeights
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">    </span><span class="err">|</span><span class="o">!</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span>childWeights
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">    </span><span class="err">|~</span><span class="w"> </span><span class="m">50</span><span class="o">%</span><span class="w"> </span>childWeights
+</code></pre></div>
+<div id="legend-container-3" class="legend"></div>
+<div class="playlists-container">
+    <div id="playlist-1-3" class="playlist"></div>
+    <div id="playlist-2-3" class="playlist"></div>
+    <div id="playlist-3-3" class="playlist"></div>
+</div>
+
+<script>
+    function initWeightsVisualization() {
+        const songColors = {
+            "MANGO": "#f44336", // Red
+            "Reflections": "#2196f3", // Blue
+            "Other": "#4caf50", // Green
+        };
+
+        const first = ["Other", "MANGO", "Other", "Other", "Reflections", "Other", "MANGO", "Other", "MANGO", "Reflections", "MANGO", "Other", "Reflections", "Other", "Reflections", "Other", "MANGO", "Other", "MANGO", "Other"];
+        const second = ["Reflections", "Other", "Other", "MANGO", "Reflections", "MANGO", "Reflections", "Other", "Reflections", "Reflections", "MANGO", "Reflections", "Reflections", "MANGO", "MANGO", "Other", "Other", "Other", "MANGO", "Other"];
+        const third = ["MANGO", "Other", "Other", "MANGO", "Other", "Reflections", "Other", "Other", "MANGO", "Other", "Reflections", "Other", "Other", "MANGO", "Other", "Other", "Reflections", "Other", "Reflections", "Other"];
+
+        renderLegend("legend-container-3", songColors);
+
+        renderPlaylist("playlist-1-3", songColors, first, "| Separator");
+        renderPlaylist("playlist-2-3", songColors, second, "|! Separator");
+        renderPlaylist("playlist-3-3", songColors, third, "|~ Separator");
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
+</script>
+
+<h3 id="multiplicative-weights">Multiplicative Weights</h3>
+<p>A less obtrusive way of shuffling a playlist is using multiplicative weights. Instead of having a set probability for every time a song is played, they simply increase the chance a song is played. This takes the following format:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kt">weights</span><span class="w"> </span>demoWeights<span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="err">|</span><span class="w"> </span><span class="m">5x</span><span class="w"> </span><span class="s">&quot;Reflections&quot;</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s">&quot;I Sworn&quot;</span>
+</code></pre></div>
+<p>"Reflections" is played 5x as often as it normally would, assuming it is in the collection (if it's not, it will do nothing). In other words, imagine the collection was taken and "Reflections" was in there once. This will act as if it was in it 5 times. If it was originally in the collection twice, it will show up 10 times.</p>
+<p>Let's say the collection has 10 songs in it, one being "Reflections". The following is a shuffle of 20 songs from the playlist, before and after the 5x multiplicative weight.</p>
+<div id="legend-container-4" class="legend"></div>
+<div class="playlists-container">
+    <div id="playlist-1-4" class="playlist"></div>
+    <div id="playlist-2-4" class="playlist"></div>
+</div>
+
+<script>
+    function initWeightsVisualization() {
+        const songColors = {
+            "Reflections": "#2196f3", // Blue
+            "Other": "#4caf50", // Green
+        };
+
+        const unweighted = ["Other", "Other", "Other", "Other", "Other", "Reflections", "Other", "Other", "Other", "Other", "Other", "Other", "Other", "Other", "Other", "Other", "Reflections", "Other", "Other", "Other"];
+        const weighted = ["Other", "Reflections", "Reflections", "Other", "Other", "Other", "Other", "Reflections", "Other", "Other", "Other", "Reflections", "Reflections", "Other", "Reflections", "Other", "Other", "Reflections", "Reflections", "Other"];
+
+        renderLegend("legend-container-4", songColors);
+
+        renderPlaylist("playlist-1-4", songColors, unweighted, "Unweighted Shuffle");
+        renderPlaylist("playlist-2-4", songColors, weighted, "Multiplicative Weights");
+    }
+
+    if (document.readyState === "complete") {
+        initWeightsVisualization();
+    } else {
+        window.addEventListener("load", initWeightsVisualization);
+    }
+</script>
+
+<h2 id="java-references">Java References</h2>
+<p>Java references are useful for interfacing with native methods that may require some special data to be associated with the field (or often times with the containing entity). A Java reference may be assigned with either the keyword <code>empty</code> to signify a null Java reference internally, or as a return value from a function (usually a native function).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kt">java</span><span class="w"> </span>myRef<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">empty</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="kt">java</span><span class="w"> </span>funcRet<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">someNativeMethod</span><span class="err">()</span>
+</code></pre></div>
+<p>To see more how a Java reference is used, see the <a href="/native_binding/introduction">Native Binding Reference</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.instant", "navigation.sections", "navigation.prune", "navigation.path", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../js/playlist_visual.js"></script>
+      
+    
+  </body>
+</html>

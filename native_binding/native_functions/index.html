@@ -1,0 +1,2324 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation, code examples, and library help for Qilletni">
+      
+      
+      
+        <link rel="canonical" href="https://qilletni.dev/native_binding/native_functions/">
+      
+      
+        <link rel="prev" href="../introduction/">
+      
+      
+        <link rel="next" href="../native_bind_factories/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Native Functions - Qilletni Language Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/playlist_visual.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#native-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Qilletni Language Docs" class="md-header__button md-logo" aria-label="Qilletni Language Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Qilletni Language Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Native Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Qilletni/Qilletni" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../official_packages/official_packages/" class="md-tabs__link">
+          
+  
+  
+  Official Packages
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Qilletni Language Docs" class="md-nav__button md-logo" aria-label="Qilletni Language Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Qilletni Language Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Qilletni/Qilletni" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quickstart
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/spotify_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/tidal_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tidal Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/lastfm_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Last.fm Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../language/syntax/operators/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syntax
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../language/types/built_in_types/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/service_providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/documenting_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documenting Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/debugging.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Binding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Native Binding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Functions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-native-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up a Native Project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-basic-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Basic Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qilletni-type-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qilletni Type Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-type-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Type Conversion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic Type Conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skipping-automatic-type-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping Automatic Type Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dealing With Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dealing With Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entityrecord-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity/Record Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-entity-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Entity Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Native Entity Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-static-entity-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Static Entity Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#injectable-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injectable Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preload-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preload Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../native_bind_factories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Bind Factories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../background_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage_examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Packages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/package_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/package_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/documenting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documenting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/package_configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/ide_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDE Integration (WIP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/hosting_docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting Docs (WIP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../official_packages/official_packages/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Official Packages
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../examples/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-native-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up a Native Project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-basic-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Basic Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qilletni-type-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qilletni Type Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-type-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Type Conversion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic Type Conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skipping-automatic-type-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping Automatic Type Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dealing With Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dealing With Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entityrecord-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity/Record Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-entity-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Entity Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Native Entity Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-static-entity-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Static Entity Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#injectable-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injectable Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preload-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preload Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../.." class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../introduction/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Native Binding
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="native-methods">Native Methods</h1>
+<p>Native methods in Qilletni are functions that are bound to a Java method. They are defined like a normal method signature, but with no body. For instance,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">getHostname</span><span class="err">()</span>
+</code></pre></div>
+<p>This page will go over how to use these functions, how to implement them, etc.</p>
+<h2 id="setting-up-a-native-project">Setting Up a Native Project</h2>
+<p>If you haven't created a project with native bindings, see the the <a href="project_structure/#project-with-native-bindings">Project Structure</a> page for setting it up. In the <code>native_classes</code> section of your <code>qilletni_info.yml</code> file, ensure a Java class' canonical name is present. This should already be present in the project's template.</p>
+<p>The naming standard of files with native methods in them is <code>XyzFunctions</code>, such as <code>CatFunctions</code>. For example,</p>
+<div class="highlight"><span class="filename">qilletni_info.yml</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># ...</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">native_classes</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev.qilletni.lib.cats.CatFunctions</span>
+</code></pre></div>
+<h2 id="creating-a-basic-function">Creating a Basic Function</h2>
+<p>The following is a basic example of a function, in the class mentioned above.</p>
+<div class="highlight"><span class="filename">cats.ql</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">getCatNames</span><span class="err">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">string</span><span class="err">[]</span><span class="w"> </span>names<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getCatNames</span><span class="err">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nf">print</span><span class="err">(</span>names<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;[Olive, Johnny, Oyster]&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CatFunctions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getCatNames</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;Olive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Johnny&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oyster&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Qilletni offers the ability to both automatically convert to/from certain types when methods are invoked, and also some manual conversions. The following Java method is what it would look like without automatic conversions.</p>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CatFunctions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ListAdapter</span><span class="w"> </span><span class="n">listAdapter</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CatFunctions</span><span class="p">(</span><span class="n">ListAdapter</span><span class="w"> </span><span class="n">listAdapter</span><span class="cm">/*(1)!*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">listAdapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listAdapter</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListType</span><span class="w"> </span><span class="nf">getCatNames</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;Olive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Johnny&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oyster&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">listAdapter</span><span class="p">.</span><span class="na">createListFromJava</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>This type is automatically injected into the class when the method is invoked. See <a href="/native_binding/native_bind_factories/">Native Bind Factories</a> for other classes that may be injected.</li>
+</ol>
+<p>The following is a basic example of a function that takes in a parameter. For demonstration, they are mixed in both auto converted types and an unconverted type.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">findAvgAge</span><span class="err">(</span>cat1<span class="err">,</span><span class="w"> </span>cat2<span class="err">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">findAvgAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cat1</span><span class="p">,</span><span class="w"> </span><span class="n">IntType</span><span class="w"> </span><span class="n">cat2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cat2Age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cat2</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">cat1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cat2Age</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>It is recommended to use automatic type conversion, but is not necessary. For a list of all automatic type conversions, see <a href="#automatic-type-conversion">Automatic Type Conversion</a>.</p>
+<h2 id="qilletni-type-structure">Qilletni Type Structure</h2>
+<p>Native types in Qilletni are all subtypes of <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/QilletniType.html">QilletniType</a>. A method may both return or take in any QilletniType.</p>
+<h2 id="automatic-type-conversion">Automatic Type Conversion</h2>
+<p>To assist with dealing with built-in Qilletni types, Qilletni will automatically convert certain types to their Java counterparts. They convert both in method parameters and in the return type. The following is a table with the built-in type converters. The reason why there are duplicates is when a parameter is passed in from Qilletni, it converts it from a QilletniType to a Java type. When a Java type is returned, it converts it to a QilletniType.</p>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/BooleanType.html">BooleanType</a></td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/BooleanType.html">BooleanType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/IntType.html">IntType</a></td>
+<td>long</td>
+<td></td>
+</tr>
+<tr>
+<td>long</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/IntType.html">IntType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/IntType.html">IntType</a></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/IntType.html">IntType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/DoubleType.html">DoubleType</a></td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/DoubleType.html">DoubleType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/StringType.html">StringType</a></td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>String</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/StringType.html">StringType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/ListType.html">ListType</a></td>
+<td>List</td>
+<td>Currently, items inside a list are not transformed to Java types</td>
+</tr>
+<tr>
+<td>List</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/ListType.html">ListType</a></td>
+<td>A list must contain only the same type</td>
+</tr>
+<tr>
+<td>Map (Entity)</td>
+<td>HashMap</td>
+<td>Converts the std lib's Map to a HashMap</td>
+</tr>
+<tr>
+<td>Object</td>
+<td><a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lang/types/JavaType.html">JavaType</a></td>
+<td>If a native method returns an Object (any non-converted class), it will be given to Qilletni as a JavaType</td>
+</tr>
+</tbody>
+</table>
+<h3 id="skipping-automatic-type-conversion">Skipping Automatic Type Conversion</h3>
+<p>If a type is returned and you don't want it to automatically convert, such as returning a JavaType of HashMap without converting it to the Map entity, the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/annotations/SkipReturnTypeAdapter.html">@SkipReturnTypeAdapter</a> annotation may be used on the method. The following is an example that is used in the Map entity itself, to initialize a Java type of HashMap.</p>
+<div class="highlight"><span class="filename">MapFunctions.java</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nd">@SkipReturnTypeAdapter</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">_emptyJavaMap</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="dealing-with-entities">Dealing With Entities</h2>
+<p>Entities are a little more complicated to handle in native methods, as they are inherently more complex than the predefined types. Luckily, Qilletni has the full ability to manipulate them and make your own.</p>
+<p>When an entity instance is passed into a native method, it is passed in as an <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html">EntityType</a>. To access the fields or functions in the entity, <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html#getEntityScope()">getEntityScope()</a> can be used, as shown below.</p>
+<div class="highlight"><span class="filename">cats.ql</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">entity</span><span class="w"> </span>Cat<span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span>name
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span>age
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nf">Cat</span><span class="err">(</span>name<span class="err">,</span><span class="w"> </span>age<span class="err">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="err">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">sayHello</span><span class="err">(</span>cat<span class="err">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>Cat<span class="w"> </span>cat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">Cat</span><span class="err">(</span><span class="s">&quot;Beer&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nf">sayHello</span><span class="err">(</span>cat<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;Hello Beer, you are 2 years old!&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CatFunctions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">(</span><span class="n">EntityType</span><span class="w"> </span><span class="n">catEntity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="n">StringType</span><span class="w"> </span><span class="n">stringType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">catEntity</span><span class="p">.</span><span class="na">getEntityScope</span><span class="p">().</span><span class="o">&lt;</span><span class="n">StringType</span><span class="o">&gt;</span><span class="n">lookup</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringType</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="n">IntType</span><span class="w"> </span><span class="n">intType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">catEntity</span><span class="p">.</span><span class="na">getEntityScope</span><span class="p">().</span><span class="o">&lt;</span><span class="n">IntType</span><span class="o">&gt;</span><span class="n">lookup</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intType</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello %s, you are %d years old!&quot;</span><span class="p">.</span><span class="na">formatted</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">));</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>The first <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/table/Scope.html#lookup(java.lang.String)">lookup()</a> call returns the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/table/Symbol.html">Symbol</a>, which is an internal representation of a variable that may hold any Qilletni type.
+From there, the value from each is gotten which is the actual type instance. Note that <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/IntType.html">IntType</a>s are internally represented as <code>long</code>s.</p>
+<p>If a variable is changed, the Symbol does not need to be re-set, but it can be. An example of a variable being updated is:</p>
+<div class="highlight"><span class="filename">cats.ql</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">catBirthday</span><span class="err">(</span>cat<span class="err">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Cat<span class="w"> </span>cat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">Cat</span><span class="err">(</span><span class="s">&quot;Beer&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nf">catBirthday</span><span class="err">(</span>cat<span class="err">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nf">print</span><span class="err">(</span>cat<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;Cat(name = Beer, age = 3)&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">catBirthday</span><span class="p">(</span><span class="n">EntityType</span><span class="w"> </span><span class="n">catEntity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">IntType</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">catEntity</span><span class="p">.</span><span class="na">getEntityScope</span><span class="p">().</span><span class="o">&lt;</span><span class="n">IntType</span><span class="o">&gt;</span><span class="n">lookup</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="n">age</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">age</span><span class="p">.</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="entityrecord-conversion">Entity/Record Conversion</h3>
+<p>Entities may also be automatically converted to and from Java records, using the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/conversion/TypeConverter.html">TypeConverter</a> class.
+The instance of this class is acquired through automatic injection, see <a href="/native_binding/native_bind_factories/">Native Bind Factories</a> for more information, and the other classes available to use. Below is an example of taking in an entity and automatically converting it to a record.</p>
+<div class="highlight"><span class="filename">cats.ql</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">entity</span><span class="w"> </span>Cat<span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span>name
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span>age
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nf">Cat</span><span class="err">(</span>name<span class="err">,</span><span class="w"> </span>age<span class="err">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="err">}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">sayHello</span><span class="err">(</span>cat<span class="err">)</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>Cat<span class="w"> </span>cat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">Cat</span><span class="err">(</span><span class="s">&quot;Beer&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">2</span><span class="err">)</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="nf">sayHello</span><span class="err">(</span>cat<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;Hello Beer, you are 2 years old!&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CatFunctions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TypeConverter</span><span class="w"> </span><span class="n">typeConverter</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CatFunctions</span><span class="p">(</span><span class="n">TypeConverter</span><span class="w"> </span><span class="n">typeConverter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">typeConverter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">typeConverter</span><span class="p">;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">(</span><span class="n">EntityType</span><span class="w"> </span><span class="n">catEntity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">        </span><span class="n">Cat</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">typeConverter</span><span class="p">.</span><span class="na">convertFromEntityToRecord</span><span class="p">(</span><span class="n">catEntity</span><span class="p">,</span><span class="w"> </span><span class="n">Cat</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello %s, you are %d years old!&quot;</span><span class="p">.</span><span class="na">formatted</span><span class="p">(</span><span class="n">cat</span><span class="p">.</span><span class="na">name</span><span class="p">(),</span><span class="w"> </span><span class="n">cat</span><span class="p">.</span><span class="na">age</span><span class="p">()));</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="p">}</span>
+</code></pre></div>
+<p>The above code uses the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/conversion/TypeConverter.html#convertFromEntityToRecord(dev.qilletni.api.lang.types.EntityType,java.lang.Class)">convertFromEntityToRecord</a> method to take an EntityType, and map its properties to a Java record that has fields of the same name.</p>
+<p>Similarly, the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/conversion/TypeConverter.html#convertFromRecordToEntity(java.lang.String,java.lang.Object)">convertFromRecordToEntity</a> method does the opposite, taking a Record and mapping it to an EntityType, matching its values up with the constructor of the entity, as shown below. This assumes the Cat entity is still defined.</p>
+<div class="highlight"><span class="filename">cats.ql</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">createNewCat</span><span class="err">(</span>name<span class="err">,</span><span class="w"> </span>age<span class="err">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Cat<span class="w"> </span>cat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">createNewCat</span><span class="err">(</span><span class="s">&quot;Martini&quot;</span><span class="err">,</span><span class="w"> </span><span class="m">3</span><span class="err">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nf">print</span><span class="err">(</span>cat<span class="err">)</span><span class="w">  </span><span class="c1">// Prints &quot;Cat(name = Martini, age = 3)&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">EntityType</span><span class="w"> </span><span class="nf">createNewCat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="n">Cat</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">typeConverter</span><span class="p">.</span><span class="na">convertFromRecordToEntity</span><span class="p">(</span><span class="s">&quot;Cat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cat</span><span class="p">);</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="native-entity-functions">Native Entity Functions</h2>
+<p>Qilletni also supports native entity member functions. This is defined in Qilletni the same as a normal native method, just in the entity.</p>
+<div class="highlight"><span class="filename">cats.ql</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">entity</span><span class="w"> </span>Cat<span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span>name
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span>age
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nf">Cat</span><span class="err">(</span>name<span class="err">,</span><span class="w"> </span>age<span class="err">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="k">native</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nf">pet</span><span class="err">()</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="err">}</span>
+</code></pre></div>
+<p>Implementing this function in Java uses the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/annotations/NativeOn.html">@NativeOn</a> annotation on the method. This takes in the entity name this is on (<code>on</code> in a similar context to an extension method's syntax).
+Any native method on an Entity must accept an <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html">EntityType</a> as its first parameter (note this is not reflected in the Qilletni signature). This is the instance of the entity that the method is being invoked on.</p>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nd">@NativeOn</span><span class="p">(</span><span class="s">&quot;Cat&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pet</span><span class="p">(</span><span class="n">EntityType</span><span class="w"> </span><span class="n">catEntity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">StringType</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">catEntity</span><span class="p">.</span><span class="na">getEntityScope</span><span class="p">().</span><span class="o">&lt;</span><span class="n">StringType</span><span class="o">&gt;</span><span class="n">lookup</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Petting %s!&quot;</span><span class="p">.</span><span class="na">formatted</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="na">getValue</span><span class="p">()));</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Often times a whole Java class is dedicated for native methods on an entity. The <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lib/annotations/NativeOn.html">@NativeOn</a> annotation may also be applied to a class definition, making all methods that line up with signatures native methods, as shown below.
+As with the case of normal native methods, the first parameter is the entity instance.</p>
+<div class="highlight"><span class="filename">CatFunctions.java</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nd">@NativeOn</span><span class="p">(</span><span class="s">&quot;Cat&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CatFunctions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pet</span><span class="p">(</span><span class="n">EntityType</span><span class="w"> </span><span class="n">catEntity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="n">StringType</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">catEntity</span><span class="p">.</span><span class="na">getEntityScope</span><span class="p">().</span><span class="o">&lt;</span><span class="n">StringType</span><span class="o">&gt;</span><span class="n">lookup</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Petting %s!&quot;</span><span class="p">.</span><span class="na">formatted</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="na">getValue</span><span class="p">()));</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="native-static-entity-functions">Native Static Entity Functions</h3>
+<p>Static methods on entities may also have native definitions. These are the same as a normal native method on an entity, but instead of accepting an <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/EntityType.html">EntityType</a>, it accepts a <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/StaticEntityType.html">StaticEntityType</a>.
+This provides the method with context regarding the <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/entity/EntityDefinition.html">entity definition</a>, and the static scope of the entity.</p>
+<h2 id="injectable-types">Injectable Types</h2>
+<p>Qilletni providers a set of classes that may be put in the constructor, and are populated when a native method is invoked. It also has the ability to inject your own classes to be used both by other libraries or scoped to just your own. See the <a href="/native_binding/native_bind_factories">Native Bind Factories</a> page for more information on this.</p>
+<h2 id="preload-methods">Preload Methods</h2>
+<p>Sometimes, especially in the case of when many methods are being performed on the same entity, a common action must happen before any of the methods get invoked. Executing code other than member variable setting is not recommended, so for this, the <a href="https://api.qilletni.dev/Qilletni.qilletni.api.main/dev/qilletni/api/lib/annotations/BeforeAnyInvocation.html">@BeforeAnyInvocation</a> annotation may be used on a single method in the class, which will be invoked before the body of any native method is ran. This method takes one parameter, which is the EntityType the method is being invoked on. This may set up instance variables (as there is one instance of the class for every call) or do anything else necessary. The example below is from the standard library std-lib, ensuring the song is populated with service provider data before an invocation is made on it.</p>
+<div class="highlight"><span class="filename">SongFunctions.java</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nd">@NativeOn</span><span class="p">(</span><span class="s">&quot;song&quot;</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SongFunctions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">MusicPopulator</span><span class="w"> </span><span class="n">musicPopulator</span><span class="p">;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">SongFunctions</span><span class="p">(</span><span class="n">MusicPopulator</span><span class="w"> </span><span class="n">musicPopulator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">musicPopulator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">musicPopulator</span><span class="p">;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="nd">@BeforeAnyInvocation</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setupSong</span><span class="p">(</span><span class="n">SongType</span><span class="w"> </span><span class="n">songType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">        </span><span class="n">musicPopulator</span><span class="p">.</span><span class="na">populateSong</span><span class="p">(</span><span class="n">songType</span><span class="p">);</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">(</span><span class="n">SongType</span><span class="w"> </span><span class="n">songType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (1)!</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">songType</span><span class="p">.</span><span class="na">getTrack</span><span class="p">().</span><span class="na">getName</span><span class="p">();</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>If the <code>@BeforeAnyInvocation</code> method wasn't ran and the song hadn't been loaded yet, <a href="https://api.qilletni.dev/qilletni.api/dev/qilletni/api/lang/types/SongType.html#getTrack()">getTrack()</a> would be null.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.instant", "navigation.sections", "navigation.prune", "navigation.path", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/playlist_visual.js"></script>
+      
+    
+  </body>
+</html>
