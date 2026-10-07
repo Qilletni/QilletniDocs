@@ -34,21 +34,51 @@ There are two ways to use Qilletni. You may install it on your system, or use th
 
 #### Install on System
 
-For a system install, first install you have at least Java 22 installed. To install Qilletni, run the following in a bash shell:
+A system install requires Java 22 or newer. The installer checks for it, preferring `$JAVA_HOME` and falling back to whatever `java` is on your `PATH`.
 
 ```bash
 curl -L https://install.qilletni.dev/ | bash
 ```
 
-This will install the commands `qilletni` and `qpm`, which are the primary toolchain, and the Qilletni Package Manager (QPM) respectively.
+This installs the commands `qilletni` and `qpm`, which are the primary toolchain and the Qilletni Package Manager (QPM) respectively.
+This also installs `qilletni-up`, which manages the install itself. Everything goes under `~/.qilletni`, and each download is verified against the SHA-256 recorded in the release's platform manifest.
 
-Then, open a new shell or run `source ~/.bashrc`
+Then open a new shell, or run:
+
+```bash
+source ~/.qilletni/env
+```
+
+The installer adds that line to your shell profile automatically, for bash and zsh. On other
+shells, add `~/.qilletni/bin` to your `PATH` yourself.
 
 From there, you can run `qilletni --help` or `qpm --help` for a list of commands.
 
+##### Updating
+
+```bash
+qilletni-up update
+```
+
+This installs the newest published version and switches to it in one step. Your installed packages and credentials are untouched. To pin a specific version instead, pass it to `install`:
+
+```bash
+qilletni-up install 1.0.0
+```
+
+Run `qilletni-up status` to see what you currently have.
+
+##### Uninstalling
+
+```bash
+qilletni-up uninstall
+```
+
+This removes the toolchain, QPM and the lines added to your shell profile. It then asks whether to also delete your `~/.qilletni` user data — your qpm credentials and installed packages — and keeps that data if you decline or if it is running non-interactively. Use `qilletni-up uninstall --purge` to remove everything without being asked.
+
 #### Use with Docker
 
-To use with Docker, run the following:
+The image bundles its own Java runtime, so nothing needs to be installed first. To use it, run the following:
 
 ```bash
 docker run --rm \
