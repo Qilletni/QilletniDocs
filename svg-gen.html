@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code to SVG Converter</title>
+    <style>
+        * { box-sizing: border-box; }
+        :root { --bg: #ffffff; --fg: #1f2328; --input-bg: #ffffff; --input-border: #ccc; }
+        [data-theme="dark"] { --bg: #0d1117; --fg: #e6edf3; --input-bg: #161b22; --input-border: #30363d; }
+        body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; background: var(--bg); color: var(--fg); }
+        h1 { margin-bottom: 1.5rem; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .container { display: flex; flex-direction: column; gap: 1rem; }
+        textarea { width: 100%; height: 200px; font-family: monospace; font-size: 14px; padding: 12px; border: 1px solid var(--input-border); border-radius: 6px; resize: vertical; background: var(--input-bg); color: var(--fg); }
+        button { padding: 10px 24px; font-size: 16px; cursor: pointer; background: #238636; color: white; border: none; border-radius: 6px; }
+        button:hover { background: #2ea043; }
+        .btn-secondary { background: #373e47; }
+        .btn-secondary:hover { background: #444c56; }
+        .btn-toggle { padding: 8px 12px; font-size: 14px; }
+        .btn-row { display: flex; gap: 0.5rem; }
+        label { font-weight: 600; }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Code to SVG Converter</h1>
+    <button class="btn-secondary btn-toggle" onclick="toggleTheme()">🌙 Dark</button>
+</div>
+<div class="container">
+    <label for="input">Input Code:</label>
+    <textarea id="input" placeholder="Paste your code here..."></textarea>
+    <div class="btn-row">
+        <button onclick="convert()">Convert to SVG</button>
+        <button class="btn-secondary" onclick="copyOutput()">Copy to Clipboard</button>
+    </div>
+    <label for="output">Output SVG:</label>
+    <textarea id="output" readonly></textarea>
+</div>
+
+<script>
+    // ============ EDIT KEYWORDS HERE ============
+    const KEYWORDS = [
+        'song',
+        'album',
+        'collection',
+        'play',
+        'by',
+        'weights',
+        'limit',
+        'provider',
+        'for',
+        'if',
+        'new',
+        'return',
+        'fun',
+    ];
+    // ============================================
+
+    function escapeHtml(text) {
+        return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function highlightCode(code) {
+        const lines = code.split('\n');
+        const keywordPattern = new RegExp(`\\b(${KEYWORDS.join('|')})\\b`, 'g');
+
+        return lines.map(line => {
+            // Extract comment (// not inside a string)
+            let comment = '';
+            let codePart = line;
+            const commentMatch = line.match(/^((?:[^"]*"[^"]*")*[^"]*)\/\/(.*)/);
+            if (commentMatch) {
+                codePart = commentMatch[1];
+                comment = '//' + commentMatch[2];
+            }
+
+            // Extract strings first (before escaping)
+            const strings = [];
+            let result = codePart.replace(/"[^"]*"/g, match => {
+                strings.push(escapeHtml(match));
+                return `\x00STR${strings.length - 1}\x00`;
+            });
+            // Escape remaining HTML
+            result = escapeHtml(result);
+            // Highlight keywords
+            result = result.replace(keywordPattern, '<span class="k">$1</span>');
+            // Highlight numbers (including 9x and 9% formats, only number part)
+            result = result.replace(/\b(\d+)([x%])?/g, (_, num, suffix) => {
+                return `<span class="n">${num}</span>${suffix || ''}`;
+            });
+            // Restore strings with highlighting
+            result = result.replace(/\x00STR(\d+)\x00/g, (_, i) => `<span class="s">${strings[i]}</span>`);
+            // Add comment if present
+            if (comment) {
+                result += `<span class="c">${escapeHtml(comment)}</span>`;
+            }
+            return result;
+        }).join('\n');
+    }
+
+    function convert() {
+        const input = document.getElementById('input').value;
+        if (!input.trim()) return;
+
+        const lines = input.split('\n');
+        const maxLineLength = Math.max(...lines.map(l => l.length));
+        const lineCount = lines.length;
+
+        const width = Math.max(400, maxLineLength * 8 + 40);
+        const height = lineCount * 20 + 40;
+
+        const highlighted = highlightCode(input);
+
+        const svg = `<!-- Generated with https://qilletni.dev/svg-gen.html -->
+<svg fill="none" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        :root { --bg: #161b22; --fg: #e6edf3; --kw: #ff7b72; --str: #a5d6ff; --cmt: #8b949e; --num: #79c0ff; }
+        @media (prefers-color-scheme: light) {
+          :root { --bg: #f6f8fa; --fg: #1f2328; --kw: #cf222e; --str: #0a3069; --cmt: #6e7781; --num: #0550ae; }
+        }
+        pre { background: var(--bg); color: var(--fg); border-radius: 6px; padding: 16px; margin: 0; font: 13.6px/1.45 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; white-space: pre; }
+        .k { color: var(--kw); }
+        .s { color: var(--str); }
+        .c { color: var(--cmt); }
+        .n { color: var(--num); }
+      </style>
+<pre>${highlighted}</pre>
+    </div>
+  </foreignObject>
+</svg>`;
+
+        document.getElementById('output').value = svg;
+    }
+
+    function copyOutput() {
+        const output = document.getElementById('output');
+        if (!output.value) return;
+        navigator.clipboard.writeText(output.value);
+    }
+
+    function toggleTheme() {
+        const html = document.documentElement;
+        const btn = document.querySelector('.btn-toggle');
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        btn.textContent = isDark ? '🌙 Dark' : '☀️ Light';
+    }
+
+    // Init theme from system preference
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.querySelector('.btn-toggle').textContent = '☀️ Light';
+    }
+</script>
+</body>
+</html>
