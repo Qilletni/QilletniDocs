@@ -53,6 +53,7 @@ nav:
         - Introduction: language/introduction.md
         - Syntax:
             - Operators: language/syntax/operators.md
+            - Play: language/syntax/play.md
             - Extension Functions: language/syntax/extension_functions.md
         - Types:
             - Built-in types: language/types/built_in_types.md

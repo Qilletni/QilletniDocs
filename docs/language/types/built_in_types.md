@@ -276,6 +276,8 @@ This may be useful if you want to batch add songs to a playlist, perform some ki
 
 ### Albums
 
+ TODO:: Add `order` to albums, show playale
+
 The `album` type represents an album that songs may be on, with an ID, name, and one or more artists. An album may be defined by:
 
 ```qilletni
@@ -286,9 +288,11 @@ album a3 = "https://open.spotify.com/album/7ulI5y1UiuepuQD61gcKHo?si=1Ip8PdIdTQK
 
 The above album definitions all represent the same albums.
 
-!!! info "Planned Feature"
+An album may also be specified with an order for when it is played. Possible values are `shuffle` (the default, if unspecified) or `sequential`.
 
-	Fetching songs from albums is a planned feature. It is already possible natively from within a service provider.
+```qilletni
+album a1 = "Here & Now" album by "Framework" order[sequential]
+```
 
 ### Playlists
 
@@ -313,7 +317,7 @@ A collection may also have weights assigned to it, along with an order, in the s
 collection c1 = "Chill Bruh Moment" collection by "rubbaboy" order[shuffle] weights[myWeights]
 ```
 
-Where `myWeights` is a variable of type `weights`. `order` may either by "shuffle" or "sequential", defaulting to the former if unspecified. To see more information regarding weights, see [Weights](#weights).
+Where `myWeights` is a variable of type `weights`. `order` may either be `shuffle` (the default, if unspecified) or `sequential`. To see more information regarding weights, see [Weights](#weights).
 
 Collections may be played in a similar way playlists are, just with an additional option.
 
