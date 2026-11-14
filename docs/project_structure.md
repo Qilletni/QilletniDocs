@@ -134,6 +134,7 @@ The available properties are:
 | version             | yes      | string                 | The x.y.z version                                            |
 | author              | yes      | string                 | The author's name                                            |
 | description         | no       | string                 | A description of the library                                 |
+| qilletni         | no       | Comparable version string                 | The version of Qilletni this application is built for                                 |
 | dependencies        | no       | package list           | A list of packages the library or application depends on     |
 | provider            | no       | Java class string      | The Java class that implements the `ServiceProvider` interface, if the library includes a [service provider](language/service_providers.md) |
 | native_bind_factory | no       | Java class string      | The Java class that implements `NativeFunctionBindingFactory` to provide native methods' implementations with singleton instances of objects. See [Native Binding Factories](native_binding/native_bind_factories.md) |
@@ -147,8 +148,9 @@ name: spotify
 version: 1.0.0
 author: Adam Yarris
 description: A service provider that adds support for Spotify
+qilletni: ^1.1.0
 dependencies:
-  - 1.0.0:postgres
+  - qilletni/postgres: ^1.0.0
 provider: dev.qilletni.music.spotify.provider.SpotifyServiceProvider
 native_bind_factory: dev.qilletni.lib.spotify.SpotifyNativeFunctionBindingFactory
 native_classes:
@@ -158,8 +160,23 @@ auto_import:
   - core.ql
 ```
 
-#### dependencies
+#### Version Strings
 
-The format for dependencies is
+Version strings are in the format of `major.minor.patch`, such as `1.2.3`.
 
-// TODO
+A comparable version may match multiple versions at once, used for dependencies and specifying what Qilletni version a
+package or application is compatible with. The format is a standard version but with an optional identifier prefixing it.
+Available prefixing identifiers are `^` and `~`, where a `^` permits versions with newer minor and patch versions, and
+a `~` permits only newer patch versions.
+
+For example:
+
+`^1.2.3` permits versions `1.2.4`, `1.3.0`, `1.3.1`, etc.
+
+`~1.2.3` permits versions `1.2.4`, `1.2.5`, etc.
+
+`1.2.3` permits only versions `1.2.3`.
+
+#### Dependencies
+
+The format for dependencies is `<scope>/<name>: <comparable version>`, for example, `qilletni/spotify: ^1.0.0`.
