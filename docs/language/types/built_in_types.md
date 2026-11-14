@@ -294,6 +294,16 @@ An album may also be specified with an order for when it is played. Possible val
 album a1 = "Here & Now" album by "Framework" order[sequential]
 ```
 
+### Album Conversion
+
+Albums can be converted to collections, using either casting or the `toCollection()` function, as shown below:
+
+```qilletni
+collection c1 = a1.toCollection()
+collection c2 = collection(a1)
+collection c3 = collection("Here & Now" album by "Framework")
+```
+
 ### Playlists
 
 In Qilletni, a playlist is abstracted as a `collection`. A collection is what it sounds like, a collection of songs. A collection may be more than just a playlist though, it may be dynamically created from a list of songs, or may represent some other kind of song list sourced by a service provider (a list of top songs, for instance). A collection contains some basic information regarding it, such as the ID, the creator, song count, songs, and name. A collection may be defined as the following:
@@ -304,10 +314,12 @@ collection c2 = "2fupEjJ1lamW0dfAsXJag6"
 collection c3 = "https://open.spotify.com/playlist/2fupEjJ1lamW0dfAsXJag6?si=45dd2429fd0a46ba"
 collection c4 = collection(["Empath" by "Fayne", "Full Tilt" by "Johnny Booth", "7L7" by "Above This"])  // (1)!
 collection c5 = collection(listVar) // (2)!
+collection c6 = collection("TORN THE FUCK OPEN, Vol. 1" album by "Torn Open") // (3)!
 ```
 
 1. Creates an in-memory collection with 3 songs in it
 2. Creates an in-memory collection of the songs in the given `song[]` list
+3. Casts an album to a collection, containing all the album's songs
 
 The first three collections all define the same playlist. `c4` and `c5` are defined by a cast-like syntax, taking in a song list within the `collection( )`. The created collection doesn't exist other than in the program's memory, but may act like any other collection.
 
